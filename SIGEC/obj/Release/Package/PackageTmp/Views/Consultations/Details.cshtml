@@ -1,0 +1,224 @@
+﻿@model SIGEC.Models.Consultation
+
+@{
+    ViewBag.Title = _("Consultations_Details");
+}
+
+<hgroup class="title">
+    <h1><img src="~/Images/consultations.png" />&nbsp;@ViewBag.Title.</h1>
+    <h2></h2>
+</hgroup>
+
+<div class="well">
+    <div class="col-lg-12">
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>@_("Consultations_CreateLegend")</legend>
+
+                <h4 class="section-subtitle">@_("lbl_PersonInfo")</h4>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.firstName)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Patient.UserAccount.firstName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.lastName)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Patient.UserAccount.lastName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.dni)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Model.Patient.UserAccount.dni.CFormat("dni")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <label>@_("lblDoctor")</label></h3>
+                            </div>
+                            <div class="panel-body">
+                                @Model.Doctor.User.CompleteName
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#maindata">@_("lblConsultationsMainTab")</a></li>
+                        <li class=""><a data-toggle="tab" href="#indications">@_("lblConsultationsIndications")</a></li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div id="maindata" class="tab-pane fade  active in">
+                            <h4 class="section-subtitle">@_("lblConsultationsMainTab")</h4>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <label>@_("lblConsultReason")</label></h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            @Html.DisplayFor(model => model.reason)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <label>@_("lblTreatment")</label></h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            @Html.DisplayFor(model => model.treatment)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <label>@_("lblObservations")</label></h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            @Html.DisplayFor(model => model.observations)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <label>@_("lblReferredTo")</label></h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            @Html.DisplayFor(model => model.referredTo)
+                                        </div>
+                                    </div>
+                                </div>
+                                @if (Model.Appointment != null)
+                                { 
+                                    <div class="col-lg-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <label>@_("lblNextAppointment")</label>
+                                                </h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                @Html.DisplayFor(model => model.Appointment.appointmentDate)
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="row">
+                                @{ SIGEC.Models.Disease d = new SIGEC.Models.Disease(); }
+                                <table class="defaultTable diagnosticsTable table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => d.diagnoseCode)</th>
+                                            <th>@Html.DisplayNameFor(model => d.observations)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Diseases)
+                                        {
+                                            <tr>
+                                                <td>@(item.diagnoseCode + " - " + ((Culture == "es") ? item.ICD10.Description_es : item.ICD10.Description_en)) </td>
+                                                <td>@item.observations</td>
+                                            </tr> 
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row form-group col-lg-12">
+                                <a href="#indications" data-val="maindata" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>
+                                @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                            </div>
+                        </div>
+                        <div id="indications" class="tab-pane fade">
+                            <h4 class="section-subtitle">@_("lblConsultationsIndications")</h4>
+
+                            <h4>@_("Analysis_Title")</h4>
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    @Html.CDropDownList("analysisID", null, null, new { @class = "chosen-multiple", multiple = "true", disabled = "disabled" })
+                                </div>
+                            </div>
+                            <h4>@_("Studies_Title")</h4>
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    @Html.CDropDownList("studyID", null, null, new { @class = "chosen-multiple", multiple = "true", disabled = "disabled" })
+                                </div>
+                            </div>
+                            <h4>@_("Procedures_Title")</h4>
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    @Html.CDropDownList("procedureID", null, null, new { @class = "chosen-multiple", multiple = "true", disabled = "disabled" })
+                                </div>
+                            </div>
+                            @if (Model.Prescriptions.FirstOrDefault() != null)
+                            { 
+                                <h4>@_("lblPrescriptions_SectionTitle")</h4>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        <label>@_("lblPrescriptionMedicines_AddTitle")</label>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <table class="defaultTable medicinesTable table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>@_("lblMedicament")</th>
+                                                    <th>@_("lblAdministration")</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Prescriptions.FirstOrDefault().Prescriptions_Medicines)
+                                                {
+                                                    <tr>
+                                                        <td>@item.Medicine.name</td>
+                                                        <td>@item.administration</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            }
+                            <div class="row form-group col-lg-12">
+                                <a href="#maindata" data-val="indications" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        }
+    </div>
+</div>

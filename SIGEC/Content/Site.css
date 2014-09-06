@@ -1,0 +1,731 @@
+﻿/* 
+	Carlos Gonzalez.
+	Estilos css customizados globales para el site.
+*/
+
+/* Global Styles */
+
+/**Fonts*/
+@font-face {
+	font-weight: 400;
+	font-style: normal;
+	font-family: 'Lora';
+	src: url(../Content/themes/readable/fonts/5-AYViExptypIdFoLKAxTA.woff) format('woff');
+}
+
+@font-face {
+	font-weight: 700;
+	font-style: normal;
+	font-family: 'Lora';
+	src: url(../Content/themes/readable/fonts/XpaepWHcooQHSRnzoohUng.woff) format('woff');
+}
+
+@font-face {
+	font-weight: 400;
+	font-style: italic;
+	font-family: 'Lora';
+	src: url(../Content/themes/readable/fonts/wXeMvRh7Gui36p_I04Ex6g.woff) format('woff');
+}
+
+@font-face {
+	font-weight: 700;
+	font-style: italic;
+	font-family: 'Lora';
+	src: url(../Content/themes/readable/fonts/_IxjUs2lbQSu0MyFEAfa7T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	padding-top: 70px; /* body padding for fixed top nav */
+}
+
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+	margin-bottom: 30px;
+}
+
+.tab-pane {
+	margin-top: 15px;
+}
+
+textarea {
+	resize: none;
+}
+
+/* Page Sections */
+.section,
+.section-colored {
+	padding: 50px 0;
+}
+
+.section-colored {
+	background-color: #e1e1e1; /* change this to change the background color of a colored section */
+}
+
+/* Footer Styles */
+footer {
+	margin: 50px 0;
+}
+
+/*Carlos Gonzalez, fix to a button height*/
+a.btn {
+	line-height: 21px;
+}
+
+/**CUSTOM CLASSES. Carlos González **/
+.fl {
+	float: left !important;
+}
+
+.fr {
+	float: right !important;
+}
+
+.fln {
+	float: none !important;
+}
+
+.mn {
+	margin: 0px !important;
+}
+
+.pl0 {
+	padding-left: 0px !important;
+}
+
+.pr0 {
+	padding-right: 0px !important;
+}
+
+.pb0 {
+	padding-bottom: 0px !important;
+}
+
+.pt0 {
+	padding-top: 0px !important;
+}
+
+.pp0 {
+	padding: 0!important;
+}
+
+.ml0 {
+	margin-left: 0px !important;
+}
+
+.ml10 {
+	margin-left: 10px !important;
+}
+
+.mr0 {
+	margin-right: 0px !important;
+}
+
+.dn {
+	display: none;
+}
+
+
+.mb20 {
+	margin-bottom: 20px !important;
+}
+
+.ml1 {
+	margin-right: 69px;
+}
+
+.ml2 {
+	margin-right: 15px;
+}
+
+.mt10{
+    margin-top: 10px;
+}
+
+.mb10{
+    margin-bottom: 10px !important;
+}
+
+.mt20{
+    margin-top: 20px;
+}
+
+/** anchor button styles. Carlos González **/
+a.button_link {
+	display: block;
+	padding: 2px 0px 2px 24px;
+	width: auto;
+	height: auto;
+	color: #525252;
+	text-decoration: none;
+	font-size: 12px;
+	font-family: Lato-Regular, Arial;
+}
+
+table a.button_link {
+	float: left;
+	margin: 0px 4px;
+	width: auto;
+	outline: none;
+	color: transparent;
+	text-decoration: none;
+	text-indent: -9999px;
+}
+
+a.button_link:hover {
+	opacity: 0.4;
+}
+
+a.add_link {
+	background: url(../images/icon_act_add.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.delete_link {
+	background: url(../images/icon_act_delete.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.edit_link {
+	background: url(../images/icon_act_edit.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.go_back_link {
+	background: url(../images/icon_act_back.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.home_link {
+	background: url(../images/icon_act_house.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.view_link {
+	background: url(../images/icon_act_view.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.history_link {
+	background: url(../images/history_link.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.rules_link {
+	background: url(../images/rules_link.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.schedule_link {
+	background: url(../images/schedule_link.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+
+a.reload_link {
+	background: url(../images/icon_act_reload.png) left center no-repeat rgba(0, 0, 0, 0);
+}
+/*End Anchor styles*/
+
+/**Carlos Gonzalez. Class to put styles to section subtitles*/
+.section-subtitle {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	display: block;
+	margin-top: 15px;
+	margin-bottom: 24px;
+	padding: 0;
+	width: 100%;
+	border-width: 0 0 1px;
+	border-style: none none solid;
+	border-color: -moz-use-text-color -moz-use-text-color #E5E5E5;
+	color: #333333;
+	font-size: 20px;
+	line-height: inherit;
+}
+
+/**Carlos Gonzalez. Date picker style when use image**/
+.defaultPicker, .datePicker {
+	background-color: #FFFFFF !important;
+	cursor: pointer !important;
+}
+
+label.control-label i {
+	cursor: pointer;
+}
+
+label.control-label {
+	width: 100%;
+}
+
+/**Carlos Gonzalez. Div radiobutton list styles**/
+.inline-block {
+	display: inline-block !important;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding-left: 0px;
+	min-height: 24px;
+}
+
+/**Carlos Gonzalez. Hide default jquery dialog close button**/
+.ui-dialog-titlebar-close {
+	visibility: hidden;
+}
+/*End dialog close button hide*/
+
+/**Carlos Gonzalez: Chosen styling*/
+select.form-control + .chosen-container.chosen-container-single .chosen-single {
+	display: block;
+	float: left;
+	padding: 6px 12px;
+	padding: 8px 12px;
+	width: 100%;
+	height: 42px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	background-image: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	color: #555;
+	vertical-align: middle;
+	font-size: 17px;
+	line-height: 1.42857;
+	-moz-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+	select.form-control + .chosen-container.chosen-container-single .chosen-single div {
+		top: 4px;
+		color: #000;
+	}
+
+select.form-control + .chosen-container .chosen-drop {
+	margin: 2px 0 0;
+	border: 1px solid #CCC;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	background-color: #FFF;
+	-moz-background-clip: padding-box;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+select.form-control + .chosen-container .chosen-search input[type=text] {
+	display: block;
+	padding: 6px 12px;
+	width: 100%;
+	height: 42px;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	background-color: #FFF;
+	background-image: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	color: #555;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 1.428571429;
+	-moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+select.form-control + .chosen-container .chosen-results {
+	margin: 2px 0 0;
+	margin-bottom: 5px;
+	padding: 5px 0;
+	background-color: #fff;
+	list-style: none;
+	font-size: 14px;
+}
+
+	select.form-control + .chosen-container .chosen-results li,
+	select.form-control + .chosen-container .chosen-results li.active-result {
+		display: block;
+		clear: both;
+		padding: 3px 20px;
+		background-image: none;
+		color: #333;
+		white-space: nowrap;
+		font-weight: normal;
+		line-height: 1.428571429;
+	}
+
+		select.form-control + .chosen-container .chosen-results li:hover,
+		select.form-control + .chosen-container .chosen-results li.active-result:hover,
+		select.form-control + .chosen-container .chosen-results li.highlighted {
+			background-color: #428BCA;
+			background-image: none;
+			color: #FFF;
+			text-decoration: none;
+		}
+
+select.form-control + .chosen-container-multi .chosen-choices {
+	display: block;
+	padding: 6px;
+	min-height: 42px;
+	width: 100%;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	background-color: #FFF;
+	background-image: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	color: #555;
+	vertical-align: middle;
+	font-size: 14px;
+	line-height: 1.428571429;
+	-moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+	select.form-control + .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+		padding: 5px 0;
+		height: auto;
+	}
+
+	select.form-control + .chosen-container-multi .chosen-choices li.search-choice {
+		margin: 0 6px 0 0;
+		padding: 3px 24px 3px 5px;
+		border: 1px solid #ccc;
+		border-color: #CCC;
+		border-radius: 4px;
+		background-color: #FFF;
+		background-image: none;
+		color: #333;
+		vertical-align: middle;
+		text-align: center;
+		white-space: nowrap;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 1.428571429;
+		cursor: pointer;
+	}
+
+		select.form-control + .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+			top: 8px;
+			right: 6px;
+		}
+
+select.form-control + .chosen-container-multi.chosen-container-active .chosen-choices,
+select.form-control + .chosen-container.chosen-container-single.chosen-container-active .chosen-single,
+select.form-control + .chosen-container .chosen-search input[type=text]:focus {
+	outline: 0;
+	border-color: #66AFE9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(102, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+select.form-control + .chosen-container-multi .chosen-results li.result-selected {
+	display: list-item;
+	background-color: white;
+	color: #ccc;
+	cursor: default;
+}
+
+.chosen-container-single .chosen-single abbr {
+	position: absolute;
+	top: 10px !important;
+	right: 26px;
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: url("chosen-sprite.png") no-repeat scroll -42px 1px rgba(0, 0, 0, 0);
+	font-size: 1px;
+}
+/**End Chosen styling*/
+
+/**Carlos Gonzalez: Bootstrap column accordion wrap**/
+.panel-group .panel {
+	margin: 5px 0 0 0;
+	padding: 0;
+}
+
+/*Checkbox items wrap*/
+label.permissions {
+	margin-left: 10px;
+	width: auto !important;
+}
+
+
+/*Login*/
+.title2 {
+	font-size: 30px;
+}
+/**/
+
+/*Validate*/
+.field-validation-error {
+	padding: 8px;
+	border: 1px solid;
+	background: none repeat scroll 0 0 #FFC0CB;
+	font-size: 15px;
+}
+/**/
+
+/*Employees*/
+.radiocont > div {
+	padding: 10px;
+	border: 1px solid #FFFFFF;
+}
+/**/
+
+/*Menu*/
+.dropdown-menu {
+	padding: 9px!important;
+	line-height: 2;
+}
+
+	.dropdown-menu a {
+		color: #555555;
+	}
+
+.btnform {
+	width: 47%!important;
+}
+
+/*ReadOnly Special*/
+.control-readonly {
+	border: 1px solid #CCCCCC !important;
+	border-radius: 4px !important;
+	background-color: #FFFFFF !important;
+}
+
+/*Tablas*/
+.table th {
+	background: none repeat scroll 0 0 #717171 !important;
+	color: #FFFFFF;
+	font-family: lora,arial;
+}
+
+.table {
+	font-size: 14px;
+}
+
+.desc {
+	width: 60%;
+}
+
+/**/
+.title h1 {
+	color: #84909A;
+}
+
+.navbar-brand {
+	padding-top: 18px !important;
+	text-shadow: 6px 1px 3px #84909A !important;
+	font-size: 34px !important;
+}
+
+.foot {
+	padding-top: 24px;
+}
+
+.navbar-brand2 {
+	background: url("../images/Logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	color: rgba(0, 0, 0, 0) !important;
+	font-size: 34px !important;
+	height: 68px;
+	padding-left: 65px !important;
+	padding-top: 20px !important;
+	text-shadow: 5px 1px 0 #84909A !important;
+}
+
+.navbar-nav > li > a {
+	padding-top: 22px!important;
+	padding-bottom: 22px!important;
+}
+
+.paging_full_numbers {
+	margin-top: 8px;
+}
+
+.center {
+	text-align: center !important;
+	margin: auto, auto, auto, auto;
+}
+
+.justify {
+	text-align: justify !important;
+	margin: auto, auto, auto, auto !important;
+}
+
+.notFoundHeader {
+	font-family: Tahoma;
+	color: red;
+	text-align: center;
+}
+
+table.table tr.even.row_selected td {
+	background-color: #B0BED9 !important;
+}
+
+table.table tr.odd.row_selected td {
+	background-color: #9FAFD1 !important;
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+	.ml3,
+	.ml2 {
+		margin-right: 8px;
+	}
+
+	.well {
+		float: left;
+		padding: 0!important;
+		width: 100%;
+	}
+
+	.form-group {
+	}
+
+	.scroll {
+		overflow: scroll;
+		margin-bottom: 30px !important;
+		width: 96%;
+	}
+
+	legend {
+		padding: 12px !important;
+		width: 91.5% !important;
+	}
+
+	.btn {
+		float: right !important;
+		margin-bottom: 10px !important;
+		width: 100% !important;
+	}
+
+	.form_table {
+		margin-left: 10px;
+	}
+
+	.pr0responsive {
+		padding-right: 0 !important;
+		width: 89% !important;
+	}
+
+	.create .form-group {
+		width: 100%;
+	}
+
+		.create .form-group .form-control {
+			width: 96%;
+		}
+
+	.row {
+		margin: 0px !important;
+	}
+
+	.delete {
+		margin-right: 0 !important;
+	}
+
+	/*Studies*/
+	.index .form-group {
+		width: 77%;
+	}
+
+	.index legend {
+		width: 82.6% !important;
+	}
+
+	.creatine {
+		margin-left: 9px;
+	}
+
+	.studiesBorder legend {
+		width: 100% !important;
+	}
+
+	/*employe*/
+	.employe .form-group .input-group,
+	.employe .form-group {
+		width: 100%;
+	}
+
+	.section-subtitle {
+		padding: 10px;
+	}
+
+	.employee2 .form-group {
+		width: 65%;
+	}
+
+	.employee2 legend {
+		width: 72% !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		padding-top: 60px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 991px) {
+	body {
+		padding-top: 190px;
+	}
+}
+
+.anchor {
+	padding-top: 70px;
+	margin-top: -70px;
+}
+
+/*Fixed footer on bottom*/
+#holder {
+	min-height: 100%;
+	position: relative;
+}
+
+#body {
+	padding-bottom: 100px;
+}
+
+#footer {
+	bottom: 0 !important;
+	height: 100px;
+	left: 0 !important;
+	right: 0 !important;
+	background-color: #F9F9F9;
+	border-color: #E8E8E8;
+	box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.2);
+}
+
+#footer-content {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+/*End Fixed Footer on bottom*/
+
+/*Carousel outline styles for controls*/
+.carousel-control {
+	outline: none !important;
+	text-decoration: none;
+}
+/*end of Carousel outline styles*/
+
+/*Map height fix*/
+.map {
+		position: relative;
+		padding-bottom: 75%; /* This is the aspect ratio */
+		height: 0;
+		overflow: hidden;
+	}
+	.map iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+/*End Map height fix*/

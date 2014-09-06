@@ -1,0 +1,275 @@
+﻿@model SIGEC.Models.ViewModels.MedicalHistoryViewModel
+
+@{
+    ViewBag.Title = _("Patients_MedicalHistory"); 
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1><img src="~/Images/medical_history.png" />&nbsp;@ViewBag.Title.</h1>
+            <h2></h2>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "standard-form" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>@_("Patients_EditLegend")</legend>
+                    @Html.HiddenFor(model => model.patientID)
+                    @Html.HiddenFor(model => model.medicalhistoryID)
+
+                    <h4 class="section-subtitle">@_("lbl_PersonInfo")</h4>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.firstName)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Html.DisplayFor(model => model.Patient.UserAccount.firstName)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.lastName)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Html.DisplayFor(model => model.Patient.UserAccount.lastName)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.dni)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Model.Patient.UserAccount.dni.CFormat("dni")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <ul class="nav nav-tabs dn">
+                            <li class="active"><a data-toggle="tab" href="#familyback">@_("lbl_FamilyBackground")</a></li>
+                            <li class=""><a data-toggle="tab" href="#toxichabits">@_("lbl_ToxicHabits")</a></li>
+                            <li class=""><a data-toggle="tab" href="#logininfo">@_("lbl_PathologicalBackground")</a></li>
+                            <li class=""><a data-toggle="tab" href="#ginecohistory">@_("lbl_GinecoHistory")</a></li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div id="familyback" class="tab-pane fade  active in">
+                                <h4 class="section-subtitle">@_("lbl_FamilyBackground")</h4>
+                                <div class="modal fade dn ignore" id="familybackmodal" data-focus-on="input:first" data-width="760">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title fbTitle">@_("lblFamilyMemBackAdd")</h4>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="modal-body familyBackForm">
+                                            <div class="row">
+                                                <div class="form-group col-lg-6">
+                                                    @Html.CLabelFor(model => model.familyMember)
+                                                    @Html.CTextBoxFor(model => model.familyMember)
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-lg-6">
+                                                    @Html.CLabelFor(model => model.disease)
+                                                    @Html.CTextAreaFor(model => model.disease)
+                                                </div>
+                                            </div>
+                                            @Html.Hidden("fmDiseaseID", 0)
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" data-dismiss="modal" class="btn btn-default fbClose">@_("lblClose")</a>
+                                        <input type="button" class="btn btn-primary fBackModal" value="@_("lblSave")" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        <a class="btn btn-primary addfBack" data-toggle="modal" href="#familybackmodal">@_("lblAdd") </a>
+                                        @Html.Hidden("addFbackUrl", Url.Action("AddFamilyDisease", "Patients", new { id = Model.medicalhistoryID }))
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        @Html.Hidden("updateFDTable", Url.Action("GetFamilyDiseases", "Patients", new { id = Model.medicalhistoryID }))
+                                        @Html.Hidden("editFDUrl", Url.Action("EditFamilyDisease", "Patients"))
+                                        @Html.Hidden("deleteFDUrl", Url.Action("DeleteFamilyDisease", "Patients"))
+                                        <table class="defaultTable table table-striped table-bordered table-hover fbackTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>@Html.DisplayNameFor(model => model.familyMember)</th>
+                                                    <th>@Html.DisplayNameFor(model => model.disease)</th>
+                                                    <th>@_("lblOptions")</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                </div>
+                                <div class="row form-group col-lg-12">
+                                    <a href="#toxichabits" data-val="familyback" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                            <div id="toxichabits" class="tab-pane fade">
+                                <h4 class="section-subtitle">@_("lbl_ToxicHabits")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <div class="checkbox">
+                                            <label>@Html.CheckBoxFor(model => model.tobacco) @_("lblTobacco")</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <div class="checkbox">
+                                            <label>@Html.CheckBoxFor(model => model.alcohol) @_("lblAlcohol")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.drugs)
+                                        @Html.CTextAreaFor(model => model.drugs)
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.naturalMedicines)
+                                        @Html.CTextAreaFor(model => model.naturalMedicines)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.others)
+                                        @Html.CTextAreaFor(model => model.others)
+                                    </div>
+                                </div>
+                                <div class="row form-group col-lg-12">
+                                    <a href="#familyback" data-val="toxichabits" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                    <a href="#pathologicalback" data-val="toxichabits" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                            <div id="pathologicalback" class="tab-pane fade">
+                                <h4 class="section-subtitle">@_("lbl_PathologicalBackground")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        <div class="checkbox">
+                                            <label>@Html.CheckBoxFor(model => model.CCF) @_("lblCCF")</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <div class="checkbox">
+                                            <label>@Html.CheckBoxFor(model => model.HTN) @_("lblHTN")</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <div class="checkbox">
+                                            <label>@Html.CheckBoxFor(model => model.diabetes) @_("lblDiabetes")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.childhoodIllnesses)
+                                        @Html.CTextAreaFor(model => model.childhoodIllnesses)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.surgeries)
+                                        @Html.CTextAreaFor(model => model.surgeries)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.transfusions)
+                                        @Html.CTextAreaFor(model => model.transfusions)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.allergies)
+                                        @Html.CTextAreaFor(model => model.allergies)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.respiratory)
+                                        @Html.CTextAreaFor(model => model.respiratory)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.gastrointestinal)
+                                        @Html.CTextAreaFor(model => model.gastrointestinal)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.urinaryReproductive)
+                                        @Html.CTextAreaFor(model => model.urinaryReproductive)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.skinAppendages)
+                                        @Html.CTextAreaFor(model => model.skinAppendages)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.psychiatric)
+                                        @Html.CTextAreaFor(model => model.psychiatric)
+                                    </div>
+                                </div>
+                                <div class="row form-group col-lg-12">
+                                    <a href="#toxichabits" data-val="pathologicalback" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                    <a href="#ginecohistory" data-val="pathologicalback" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                            <div id="ginecohistory" class="tab-pane fade">
+                                <h4 class="section-subtitle">@_("lbl_GinecoHistory")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.menstruation)
+                                        @Html.CTextBoxFor(model => model.menstruation)
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.GDM)
+                                        @Html.CTextBoxFor(model => model.GDM)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.menarche)
+                                        @Html.CTextAreaFor(model => model.menarche)
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.preclampsia)
+                                        @Html.CTextAreaFor(model => model.preclampsia)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.currentCondition)
+                                        @Html.CTextAreaFor(model => model.currentCondition)
+                                    </div>
+                                </div>
+                                <div class="row form-group col-lg-12">
+                                    <a href="#pathologicalback" data-val="ginecohistory" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                    <input type="submit" class="btn btn-primary save" value="@_("lblSave")" />
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $.fn.medicalHistoryInit();
+        });
+    </script>
+}

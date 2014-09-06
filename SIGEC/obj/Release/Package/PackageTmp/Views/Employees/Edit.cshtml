@@ -1,0 +1,160 @@
+﻿@model SIGEC.Models.ViewModels.EmployeeViewModel
+
+@{
+    ViewBag.Title = _("Employee_Edit");
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1><img src="~/Images/employees.png" />&nbsp;@ViewBag.Title.</h1>
+            <h2></h2>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "standard-form" }))
+            {
+                if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+                { 
+                    <div class="alert alert-dismissable alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        @Html.ValidationSummary(true)
+                    </div>
+                }
+
+                <fieldset class="employe">
+                    @Html.HiddenFor(model => model.ID)
+                    <legend>@_("Employee_EditLegend")</legend>
+                    <div class="">
+                        <ul class="nav nav-tabs dn">
+                            <li class="active"><a data-toggle="tab" href="#pinfo">@_("lbl_PersonInfo")</a></li>
+                            <li class=""><a data-toggle="tab" href="#ucontact">@_("lblUserContact")</a></li>
+                            <li class=""><a data-toggle="tab" href="#logininfo">@_("lbl_LoginInfo")</a></li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div id="pinfo" class="tab-pane fade  active in">
+                                <h4 class="section-subtitle">@_("lbl_PersonInfo")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.firstName)
+                                        @Html.CTextBoxFor(model => model.firstName)
+                                        @Html.CValidationMessageFor(model => model.firstName)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.lastName)
+                                        @Html.CTextBoxFor(model => model.lastName)
+                                        @Html.CValidationMessageFor(model => model.lastName)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.dni)
+                                        @Html.CTextBoxFor(model => model.dni, new { @class = "dni" })
+                                        @Html.CValidationMessageFor(model => model.dni)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.bornDate)
+                                        <div class="input-group">
+                                            @Html.CTextBoxFor(model => model.bornDate, new { @class = "defaultPicker", Value = Model.bornDate.ToString("yyyy/MM/dd") })
+                                            <label for="bornDate" class="input-group-addon btn">
+                                                <i class="glyphicon glyphicon-calendar"></i>
+                                            </label>
+                                        </div>
+                                        @Html.CValidationMessageFor(model => model.bornDate)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.email)
+                                        @Html.CTextBoxFor(model => model.email)
+                                        @Html.CValidationMessageFor(model => model.email)
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        @Html.CLabelFor(model => model.occupation)
+                                        @Html.CTextBoxFor(model => model.occupation)
+                                        @Html.CValidationMessageFor(model => model.occupation)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group radiocont col-lg-4">
+                                        @Html.CLabelFor(model => model.maritalStatus)
+                                        @Html.Partial("EnumRadioButtonListEdit", new EnumBox(typeof(MaritalStatus), Model.maritalStatus, "maritalStatus"))
+                                        @Html.CValidationMessageFor(model => model.maritalStatus)
+                                    </div>
+                                    <div class="form-group radiocont col-lg-4">
+                                        @Html.CLabelFor(model => model.gender)
+                                        @Html.Partial("EnumRadioButtonListEdit", new EnumBox(typeof(Genders), Model.gender, "gender"))
+                                        @Html.CValidationMessageFor(model => model.gender)
+                                    </div>
+                                </div>
+                                <div class="row form-group col-lg-12">
+                                    <a href="#ucontact" data-val="pinfo" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                            <div id="ucontact" class="tab-pane fade">
+                                <h4 class="section-subtitle">@_("lblUserContact")</h4>
+                                @Html.Partial("_AddressPartial", Model.Address)
+                                @Html.Partial("_PhonesEditPartial", new SIGEC.Models.ViewModels.PhoneViewModel())
+                                @Html.Hidden("AddPhoneUrl", Url.Action("AddPhone", "GlobalHelpers", new { entityID = Model.ID, isUser = true }))
+                                <div class="row form-group col-lg-12">
+                                    <a href="#pinfo" data-val="ucontact" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                    <a href="#logininfo" data-val="ucontact" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                            <div id="logininfo" class="tab-pane fade">
+                                <label class="mb20">@Html.CheckBox("changeLoginInfo") @_("lblChangeLoginData")</label>
+
+                                <div class="loginInfo dn">
+                                    <h4 class="section-subtitle">@_("lbl_LoginInfo")</h4>
+                                    <div class="row">
+                                        <div class="form-group col-lg-4">
+                                            @Html.CLabelFor(model => model.status)
+                                            <div class="checkbox">
+                                                <label>@Html.CheckBoxFor(model => model.status, new { @class = "fln" }) @_("lblAccountStatus")</label>
+                                            </div>
+                                            @Html.CValidationMessageFor(model => model.status)
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-lg-4">
+                                            @Html.CLabelFor(model => model.username)
+                                            @Html.CTextBoxFor(model => model.username)
+                                            @Html.CValidationMessageFor(model => model.username)
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            <label for="password" class="control-label">@_("lblPassword")&nbsp;&nbsp;<i data-toggle="popover" data-content="@_("lblPassworPolicy_Description")" title="@_("lblPassworPolicy_Title")" class="glyphicon glyphicon-question-sign"></i></label>
+                                            @Html.CPasswordFor(m => m.password, new { Value = Model.password })
+                                            @Html.CValidationMessageFor(m => m.password)
+                                        </div>
+                                        <div class="form-group col-lg-4">
+                                            @Html.CLabelFor(m => m.ConfirmPassword)
+                                            @Html.CPasswordFor(m => m.ConfirmPassword, new { Value = Model.ConfirmPassword })
+                                            @Html.CValidationMessageFor(m => m.ConfirmPassword)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group col-lg-12">
+                                    <a href="#ucontact" data-val="logininfo" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                    <input type="submit" class="btn btn-primary save" value="@_("lblSave")" />
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $.fn.phonesEditInit(
+                Code52.Language.Dictionary.lblAdd,
+                Code52.Language.Dictionary.lblCancel,
+                $('#ID').val(),
+                true
+            );
+        });
+    </script>
+}

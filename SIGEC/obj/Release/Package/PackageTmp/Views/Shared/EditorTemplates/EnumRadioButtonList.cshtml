@@ -1,0 +1,10 @@
+﻿@model Enum
+
+<div>
+    @foreach (var value in Enum.GetValues(Model.GetType()))
+    {
+        <div class="inline-block">
+            <label>@Html.RadioButtonFor(m => m, value) @(_(value.ToString()))</label>
+        </div>
+    }
+</div>

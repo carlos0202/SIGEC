@@ -1,0 +1,113 @@
+﻿@model SIGEC.Models.ViewModels.PhoneViewModel
+
+<div class="modal fade dn ignore" id="phonesEditModal" data-focus-on="input:first" data-width="760">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">@_("lblPhoneModalEdit")</h4>
+    </div>
+    <div class="col-lg-12">
+        <div class="modal-body">
+            @Html.Hidden("phoneID", 0)
+            @Html.Hidden("phone", "", new { @class = "cVal" })
+            <div class="row">
+                <div class="form-group col-lg-4">
+                    @Html.CLabelFor(model => model.phoneNumber)
+                    @Html.CTextBoxFor(model => model.phoneNumber, new { @class = "phone ePhone" })
+                    @Html.CValidationMessageFor(model => model.phoneNumber)
+                </div>
+                <div class="form-group col-lg-4">
+                    @Html.CLabelFor(model => model.type)
+                    @Html.CDropDownListFor(model => model.type, Model.type.ToSelectList())
+                    @Html.CValidationMessageFor(model => model.type)
+                </div>
+                <div class="form-group col-lg-4">
+                    @Html.CLabelFor(model => model.notes)
+                    @Html.CTextBoxFor(model => model.notes)
+                    @Html.CValidationMessageFor(model => model.notes)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn btn-default">@_("lblCancel")</a>
+        <input type="button" class="btn btn-primary phoneSaveBtn" value="@_("lblSave")" />
+    </div>
+
+</div>
+
+<div class="modal fade dn ignore" id="phonesAddModal" data-focus-on="input:first" data-width="760">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">@_("lblPhoneModalAdd")</h4>
+    </div>
+    <div class="col-lg-12">
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group col-lg-4">
+                    @Html.CLabelFor(model => model.phoneNumber)
+                    @Html.CTextBoxFor(model => model.phoneNumber, new { @class = "phone cPhone" })
+                    @Html.CValidationMessageFor(model => model.phoneNumber)
+                </div>
+                <div class="form-group col-lg-4">
+                    @Html.CLabelFor(model => model.type)
+                    @Html.CDropDownListFor(model => model.type, Model.type.ToSelectList(), null, new { @class = "cType" })
+                    @Html.CValidationMessageFor(model => model.type)
+                </div>
+                <div class="form-group col-lg-4">
+                    @Html.CLabelFor(model => model.notes)
+                    @Html.CTextBoxFor(model => model.notes, new { @class = "cNotes" })
+                    @Html.CValidationMessageFor(model => model.notes)
+                </div>
+                @Html.Hidden("phoneE", "", new { @class = "uPhone" })
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn btn-default">@_("lblClose")</a>
+        <input type="button" class="btn btn-primary phoneAddC" value="@_("lblAdd")" />
+    </div>
+</div>
+
+@*<div class="row cModal dn">
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.phoneNumber)
+        @Html.CTextBoxFor(model => model.phoneNumber, new { @class = "phone cPhone" })
+    </div>
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.type)
+        @Html.CDropDownListFor(model => model.type, Model.type.ToSelectList(), null, new { @class = "cType" })
+    </div>
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.notes)
+        @Html.CTextBoxFor(model => model.notes, new { @class = "cNotes" })
+    </div>
+    @Html.Hidden("phoneE", "", new { @class = "uPhone" })
+</div>*@
+
+
+<h4>@_("lblPhones")</h4>
+<div class="row">
+    <div class="form-group col-lg-12">
+        <a class="btn btn-primary" data-toggle="modal" href="#phonesAddModal">@_("lblAdd") </a>
+    </div>
+    <div class="form-group col-lg-12 scroll">
+        @Html.Hidden("updatePhoneUrl", Url.Action("UpdatePhone", "Employees"))
+        @Html.Hidden("editPhoneUrl", Url.Action("EditPhone", "Employees"))
+        @Html.Hidden("deletePhoneUrl", Url.Action("DeletePhone", "GlobalHelpers"))
+        @Html.Hidden("updatePhonesTableUrl", Url.Action("UpdatePhonesTable", "Employees"))
+        @Html.Hidden("checkPhoneUrl", Url.Action("CheckPhone", "GlobalHelpers"))
+        @Html.Hidden("phone", "")
+        <table class="defaultTable table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.phoneNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.type)</th>
+                    <th>@Html.DisplayNameFor(model => model.notes)</th>
+                    <th>@_("lblOptions")</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+﻿@model SIGEC.Models.ViewModels.ConsultationPaymentViewModel
+
+@{
+    ViewBag.Title = _("PayConsultation_Title");
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1><img src="~/Images/payments.png" />&nbsp;@ViewBag.Title.</h1>
+            <h2></h2>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                if (!ViewData.ModelState.IsValid)
+                { 
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    @Html.ValidationSummary()
+                </div>
+                }
+                <fieldset>
+                    <legend>@_("Payments_Legend")</legend>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="mb20">@Html.CheckBox("patientWApp", true) @_("lblPatientWAppointment")</label>
+                        </div>
+                        @Html.Hidden("GetPatientsUrl", Url.Action("GetPatients", "Payments"))
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.patientID)
+                            <div class="input-group">
+                                @Html.CDropDownListFor(m => m.patientID, null, null, new { @class = "chosen" })
+                                <label for="patientID" class="input-group-addon btn patient-search">
+                                    <i class="glyphicon glyphicon-search" title="@_("lblAdvancedSearch")" data-toggle="tooltip"></i>
+                                </label>
+                            </div>
+                            @Html.CValidationMessageFor(m => m.patientID)
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.doctorID)
+                            @Html.CDropDownListFor(m => m.doctorID, null, null, new { @class = "chosen" })
+                            @Html.CValidationMessageFor(m => m.doctorID)
+                            @Html.Hidden("GetPriceUrl", Url.Action("GetPrice", "Payments"))
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.insurerID)
+                            @Html.CDropDownListFor(m => m.insurerID, null, null, new { @class = "chosen" })
+                            @Html.CValidationMessageFor(m => m.insurerID)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.price)
+                            @Html.CTextBoxFor(m => m.price, new { Value = 0, @readonly = "true", @class = "control-readonly money" })
+                            @Html.CValidationMessageFor(m => m.price)
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.discount)
+                            @Html.CTextBoxFor(m => m.discount, new { Value = 0, @class = "money" })
+                            @Html.CValidationMessageFor(m => m.discount)
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.insurer)
+                            @Html.CTextBoxFor(m => m.insurer, new { Value = 0, @class = "money" })
+                            @Html.CValidationMessageFor(m => m.insurer)
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label>@_("lblPatientAmount")</label>
+                            @Html.CTextBox("patient", 0, new { @readonly = "true", @class = "control-readonly" })
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(m => m.paymentForm)
+                            @Html.CDropDownListFor(m => m.paymentForm, null, null)
+                            @Html.CValidationMessageFor(m => m.paymentForm)
+                        </div>
+                    </div>
+
+                    <div class="row form-group col-lg-12">
+                        <input type="submit" class="btn btn-primary col-lg-2 ml2" value="@_("lblSave")" />
+                        @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default col-lg-2" })
+                    </div>
+                </fieldset>
+            }
+            @Html.Hidden("patientSearchUrl", Url.Action("PatientSearch", "GlobalHelpers"))
+            <div class="modal fade dn" id="findpatientsModal" data-focus-on="input:first" data-width="760">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">@_("lblbPatientAdvSerach")</h4>
+                </div>
+                <div class="modal-body psBody">
+                    @Html.Partial("_PatientSearch", new SIGEC.Models.ViewModels.PatientViewModel(), Html.ViewData)
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn btn-default ">@_("lblClose")</a>
+                    <input type="button" class="btn btn-primary btn-select " value="@_("lblSelect")" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $.fn.appointmentsPSearchInit();
+            $.fn.consultationPaymentsInit();
+        });
+    </script>
+}

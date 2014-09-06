@@ -1,0 +1,235 @@
+﻿@using SIGEC.Models
+
+@model User
+
+@{
+    ViewBag.Title = _("Employee_Delete");
+}
+
+<hgroup class="title">
+    <h1><img src="~/Images/employees.png" />&nbsp;@ViewBag.Title.</h1>
+    <h2></h2>
+</hgroup>
+
+<div class="well">
+    <div class="col-lg-12">
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>@_("Delete_Confirmation")</legend>
+                <h4 class="section-subtitle">@_("lbl_PersonInfo")</h4>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.firstName)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.firstName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.lastName)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.lastName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.dni)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Model.dni.CFormat("dni")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.bornDate)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.bornDate)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.email)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.email)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.occupation)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.occupation)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.maritalStatus)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @_((((MaritalStatus)Convert.ToChar(Model.maritalStatus)).ToString()))
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.gender)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @_((((Genders)Convert.ToChar(Model.gender)).ToString()))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="section-subtitle">@_("lblUserContact")</h4>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Address.country)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Address.country)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Address.city)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Address.city)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Address.municipality)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Address.municipality)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Address.sector)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Address.sector)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Address.street)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Address.street)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Address.number)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Address.number)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>@_("lblPhones")</h4>
+                <div class="row">
+                    <div class="form-group col-lg-12">
+                        <table class="defaultTable table table-striped table-bordered table-hover">
+                            @{ Phone p = new Phone(); }
+                            <thead>
+                                <tr>
+                                    <th>@Html.DisplayNameFor(model => p.number)</th>
+                                    <th>@Html.DisplayNameFor(model => p.type)</th>
+                                    <th>@Html.DisplayNameFor(model => p.notes)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Phones) 
+                                { 
+                                    <tr>
+                                        <td>@item.number.CFormat("phone")</td>
+                                        <td>@_(((PhoneTypes)item.type).ToString())</td>
+                                        <td>@item.notes</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h4 class="section-subtitle">@_("lblSystemInfo")</h4>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.Label(_("lblStatus"))</h3>
+                            </div>
+                            <div class="panel-body">
+                                @_( (Model.status) ? "MActive" : "MInactive" )
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.username)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.username)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.createDate)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.createDate)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-10 row">
+                    <input type="submit" value="@_("lblDelete")" class="btn btn-danger" />
+                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default" })
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>

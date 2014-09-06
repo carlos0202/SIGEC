@@ -1,0 +1,60 @@
+﻿@model SIGEC.Models.Medicine
+
+@{
+    ViewBag.Title = _("Medicaments_Create");
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1><img alt="medicaments_picture" src="~/Images/medicaments.png" />&nbsp;@ViewBag.Title.</h1>
+            <h2></h2>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "standard-form" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>@_("Medicaments_CreateLegend")</legend>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(model => model.name)
+                            @Html.CTextBoxFor(model => model.name)
+                            @Html.CValidationMessageFor(model => model.name)
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(model => model.genericName)
+                            @Html.CTextBoxFor(model => model.genericName)
+                            @Html.CValidationMessageFor(model => model.genericName)
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(model => model.type)
+                            @Html.CTextBoxFor(model => model.type)
+                            @Html.CValidationMessageFor(model => model.type)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(model => model.usage)
+                            @Html.CTextAreaFor(model => model.usage)
+                            @Html.CValidationMessageFor(model => model.usage)
+                        </div>
+                        <div class="form-group col-lg-4">
+                            @Html.CLabelFor(model => model.dosage)
+                            @Html.CTextAreaFor(model => model.dosage)
+                            @Html.CValidationMessageFor(model => model.dosage)
+                        </div>
+                    </div>
+                    <div class="row form-group col-lg-12">
+                        <input type="submit" class="btn btn-primary save col-lg-2 ml2" value="@_("lblSave")" />
+                        @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel col-lg-2" })
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+}

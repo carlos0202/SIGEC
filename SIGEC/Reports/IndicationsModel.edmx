@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SIGECModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SIGECModelStoreContainer" />
+        <Function Name="PrintAnalysisIndication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cons_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PrintIncomes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="date" Type="date" Mode="In" />
+        </Function>
+        <Function Name="PrintPrescription" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cons_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PrintProcedureIndication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cons_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PrintStudyIndication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cons_ID" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SIGECModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SIGECEntities" p1:LazyLoadingEnabled="true" >
+          <FunctionImport Name="PrintAnalysisIndication" ReturnType="Collection(SIGECModel.PrintAnalysisIndication_Result)">
+          <Parameter Name="cons_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PrintProcedureIndication" ReturnType="Collection(SIGECModel.PrintProcedureIndication_Result)">
+          <Parameter Name="cons_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PrintStudyIndication" ReturnType="Collection(SIGECModel.PrintStudyIndication_Result)">
+          <Parameter Name="cons_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PrintPrescription" ReturnType="Collection(SIGECModel.PrintPrescription_Result)">
+          <Parameter Name="cons_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PrintIncomes" ReturnType="Collection(SIGECModel.PrintIncomes_Result)">
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="PrintAnalysisIndication_Result">
+          <Property Type="String" Name="analysis" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="fullName" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="age" Nullable="false" />
+          <Property Type="DateTime" Name="creationDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="nextAppointnment" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="PrintProcedureIndication_Result">
+          <Property Type="String" Name="procedureName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="fullName" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="age" Nullable="false" />
+          <Property Type="DateTime" Name="creationDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="nextAppointnment" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="PrintStudyIndication_Result">
+          <Property Type="String" Name="studyName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="fullName" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="age" Nullable="false" />
+          <Property Type="DateTime" Name="creationDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="nextAppointnment" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="PrintPrescription_Result">
+          <Property Type="String" Name="medicine" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="dosage" Nullable="false" />
+          <Property Type="String" Name="fullName" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="age" Nullable="false" />
+          <Property Type="DateTime" Name="creationDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="nextAppointment" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="PrintIncomes_Result">
+          <Property Type="Int64" Name="No" Nullable="true" />
+          <Property Type="String" Name="fullName" Nullable="false" MaxLength="101" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Decimal" Name="discount" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Decimal" Name="insurer" Nullable="true" Precision="8" Scale="2" />
+          <Property Type="Decimal" Name="total" Nullable="true" Precision="10" Scale="2" />
+          <Property Type="DateTime" Name="reportDate" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SIGECModelStoreContainer" CdmEntityContainer="SIGECEntities" >
+          <FunctionImportMapping FunctionImportName="PrintAnalysisIndication" FunctionName="SIGECModel.Store.PrintAnalysisIndication">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIGECModel.PrintAnalysisIndication_Result">
+                <ScalarProperty Name="analysis" ColumnName="analysis" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="nextAppointnment" ColumnName="nextAppointnment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PrintProcedureIndication" FunctionName="SIGECModel.Store.PrintProcedureIndication">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIGECModel.PrintProcedureIndication_Result">
+                <ScalarProperty Name="procedureName" ColumnName="procedureName" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="nextAppointnment" ColumnName="nextAppointnment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PrintStudyIndication" FunctionName="SIGECModel.Store.PrintStudyIndication">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIGECModel.PrintStudyIndication_Result">
+                <ScalarProperty Name="studyName" ColumnName="studyName" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="nextAppointnment" ColumnName="nextAppointnment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PrintPrescription" FunctionName="SIGECModel.Store.PrintPrescription">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIGECModel.PrintPrescription_Result">
+                <ScalarProperty Name="medicine" ColumnName="medicine" />
+                <ScalarProperty Name="dosage" ColumnName="dosage" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="nextAppointment" ColumnName="nextAppointment" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PrintIncomes" FunctionName="SIGECModel.Store.PrintIncomes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SIGECModel.PrintIncomes_Result">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="insurer" ColumnName="insurer" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="reportDate" ColumnName="reportDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
