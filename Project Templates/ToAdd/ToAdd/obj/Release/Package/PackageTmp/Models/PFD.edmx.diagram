@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8d65dfe8a56846658373b234f4ad907c" Name="Diagram1">
+        <EntityTypeShape EntityType="DGII_PFD.Models.PFD_PARAMETROS" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGII_PFD.Models.PFD_PROCEDIMIENTOS" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGII_PFD.Models.PFD_ROLES" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGII_PFD.Models.PFD_USUARIOS" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="DGII_PFD.Models.FK_PROCEDIMIENTO" ManuallyRouted="false" />
+        <AssociationConnector Association="DGII_PFD.Models.PFD_PROCEDIMIENTOS_ROLES" ManuallyRouted="false" />
+        <AssociationConnector Association="DGII_PFD.Models.PFD_ROLES_USUARIOS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DGII_PFD.Models.PFD_LOG" Width="1.5" PointX="7.5" PointY="3.125" />
+        <AssociationConnector Association="DGII_PFD.Models.FK_LOG_PROCEDIMIENTO" />
+        <AssociationConnector Association="DGII_PFD.Models.FK_LOG_USUARIO" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

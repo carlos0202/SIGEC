@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-do">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - PFD</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/DataTables-1.10.2/css/sytles")
+</head>
+<body>
+    @Html.Partial("_NavBar")
+    <div id="spinner" class="spinner ajaxSpinner" style="display:none;">
+    </div>
+    <div id="spinner" class="spinner pageloadSpinner">
+    </div>
+    <div id="holder" class="container">
+        @RenderSection("featured", required: false)
+        @RenderBody()
+    </div>
+    <div id="footer" class="">
+        <footer>
+            <div id="footer-content" class="content-wrapper">
+                <div class="float-left">
+                    @Html.ActionLink("PFD", "Index", "Home", null, new { @class = "navbar-brand pl0" })
+                    <p class="fr foot">&copy; @DateTime.Now.Year - PFD</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @if (TempData["Message"] != null)
+    {
+        @Html.Hidden("ResultMessage", (string)TempData["Message"])
+    }
+
+    <div class="ajaxModal">
+        <div class="modal fade" id="ajaxResultModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header ajaxModalHeader">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Cerrar</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Resultado de la petici&oacute;n.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h2 class="center ajaxMessage"></h2>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn ajaxModalButton" data-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/chosen")
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+    @*@Scripts.Render("~/Scripts/js")*@
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿@model IOrderedEnumerable<KeyValuePair<string, string>>
+
+@{
+    ViewBag.Title = "CurrentUserProperties";
+}
+
+<h2>Propiedades del usuario actual</h2>
+
+@foreach (var item in Model)
+{
+    <li>@item.Key:&nbsp;@item.Value</li><br />
+}

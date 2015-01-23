@@ -1,0 +1,77 @@
+﻿@model IEnumerable<PFD_PROCEDIMIENTOS>
+
+@{
+    ViewBag.Title = "Formularios Registrados";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <hgroup class="title"></hgroup>
+        <div class="well">
+            <fieldset>
+                <legend>Formularios Registrados</legend>
+                <div class="row buttonTable">
+                    <div class="form-group col-sm-12 pr0">
+                        <p class="">
+                            @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-success  fr mb10" })
+                        </p>
+                    </div>
+                </div>
+                <div class="cols-sm-12">
+                    <div class="table-responsive">
+                        <table class="table usersTable table-striped table-bordered table-hover">
+                            <thead>
+                                <tr class="success">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NOMBRE)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DESCRIPCION)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.HABILITADO)
+                                    </th>
+                                    <th>&nbsp;Opciones&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NOMBRE)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DESCRIPCION)
+                                        </td>
+                                        <td>
+                                            @((item.HABILITADO == 1) ? "SI" : "NO")
+                                        </td>
+                                        <td>
+                                            @Html.ActionLinkImage("pencil", "Edit", "Editar", new { id = item.ID }, new { @class = "iconLink" })
+                                            @Html.ActionLinkImage("eye-open", "Details", "Ver Detalles", new { id = item.ID }, new { @class = "iconLink" })
+                                            @Html.ActionLinkImage("tasks", "Assign", "Asignar Roles", new { id = item.ID }, new { @class = "iconLink" })
+                                            @Html.ActionLinkImage("remove-sign", "Delete", "Eliminar", new { id = item.ID }, new { @class = "iconLink" })
+                                            @Html.ActionLinkImage("book", "GetLogs", "Mostrar Log", new { ID = item.ID }, new { @class = "iconLink showLogs" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div class="logsModalDiv">
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $.fn.FormsIndex();
+        });
+    </script>
+}
+
+

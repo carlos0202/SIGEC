@@ -1,0 +1,106 @@
+﻿@model DGII_PFD.Models.PFD_PROCEDIMIENTOS
+@using DGII_PFD.Helpers;
+
+@{
+    ViewBag.Title = "Ejecutar Procedimiento";
+    //var parametros = (List<PFD_PARAMETROS>)ViewBag.Parametros;
+}
+
+<h2>Ejecución de procedimiento.</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Acción/Procedimiento: @Html.Label(Model.NOMBRE)</h3>
+    </div>
+    <div class="panel-body">
+
+        @using (Html.BeginForm("Ejecutar", "Test", FormMethod.Post, new { @role = "form", @class = "form-horizontal" }))
+        {
+
+            @Html.HiddenFor(m => m.NOMBRE)
+            @Html.HiddenFor(m => m.ID)
+            @Html.HiddenFor(m => m.PROCEDIMIENTO)
+            @Html.HiddenFor(m => m.DESCRIPCION)
+
+
+            for (int i = 0; i < Model.Parametros.Count(); i++)
+            {
+                @Html.HiddenFor(m => Model.Parametros[i].ID)
+                @Html.HiddenFor(m => Model.Parametros[i].TIPO)
+                @Html.HiddenFor(m => Model.Parametros[i].NOMBRE)
+                @Html.HiddenFor(m => Model.Parametros[i].PARAMETRO)
+
+                <div class="form-group">
+                    @Html.Label(string.Format("Parametros[{0}].VALOR", i), Model.Parametros[i].NOMBRE, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-5">
+                        @Html.CTextBoxFor(m => Model.Parametros[i].VALOR)
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="checkbox" style="padding-top: 6px;">
+                            @Html.CustomCheck(m => Model.Parametros[i].REQUERIDO)
+                            @*@Html.CheckBoxFor(m => Model.Parametros[i].Required, new { @class = "switchInput" })*@
+                        </div>
+
+                    </div>
+                </div>
+            }
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Ejecutar Procedimiento</button>
+                </div>
+            </div>
+            @*<div class="row">
+                    <div class="col-sm-12">
+                        <div class="well">
+                            <div class="row col-sm-offset-5">
+                                <label class="control-label">(@Model.NOMBRE)</label>
+                            </div>
+                            <br />
+                            @Html.HiddenFor(m => m.NOMBRE)
+                            @Html.HiddenFor(m => m.PROCEDIMIENTO)
+                            @Html.HiddenFor(m => m.DESCRIPCION)
+
+                            @for (int i = 0; i < Model.Parametros.Count(); i++)
+                            {
+                                <div class="row col-sm-offset-1">
+                                    <div class="form-group col-sm-2">
+                                        @Html.CLabelFor(m => Model.Parametros[i].NOMBRE)
+                                        @Html.CTextBoxFor(m => Model.Parametros[i].NOMBRE)
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        @Html.CLabelFor(m => Model.Parametros[i].PARAMETRO)
+
+                                        @Html.CTextBoxFor(m => Model.Parametros[i].PARAMETRO)
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        @Html.CLabelFor(m => Model.Parametros[i].TIPO)
+                                        @Html.CTextBoxFor(m => Model.Parametros[i].TIPO)
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        @Html.CLabelFor(m => Model.Parametros[i].VALOR)
+                                        @Html.CTextBoxFor(m => Model.Parametros[i].VALOR)
+                                    </div>
+                                    <div class="form-group col-sm-2">
+                                        <label>&nbsp;</label>
+                                        <label>&nbsp;</label>
+                                        <label class="checkbox">
+                                            @Html.CTextBox(string.Format("Parametros[{0}].VALOR", i), Model.Parametros[i].VALOR)
+
+                                            @Html.CLabelFor(m => Model.Parametros[i].Required, new { @class = "" }) &nbsp;Requerido
+
+                                        </label>
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="col-sm-offset-1">
+                                <input type="submit" value="Enviar" class="btn btn-primary">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>*@
+        }
+    </div>
+    <div class="panel-footer"><strong>Descripción del procedimiento:</strong> @Html.Label(Model.DESCRIPCION)</div>
+</div>

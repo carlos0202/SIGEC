@@ -1,0 +1,105 @@
+﻿@model PFD_ROLES
+
+@{
+    ViewBag.Title = "Roles";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <hgroup class="title"></hgroup>
+        <div class="well">
+            <fieldset>
+                <legend>Roles Registrados</legend>
+                <div class="row buttonTable">
+                    <div class="form-group col-sm-12 pr0">
+                        <button class="btn btn-success fr mb10" data-toggle="modal" data-target="#createRoleModal">
+                            Nuevo Rol
+                        </button>
+                    </div>
+                </div>
+                <div class="cols-sm-12">
+                    <div class="table-responsive">
+                        @Html.Hidden("updateRolesTableUrl", Url.Action("UpdateRolesTable", "Roles"))
+                        @Html.Hidden("editRoleUrl", Url.Action("Edit", "Roles"))
+                        @Html.Hidden("deleteRoleUrl", Url.Action("Delete", "Roles"))
+                        <table class="table rolesTable table-striped table-bordered table-hover">
+                            <thead>
+                                <tr class="success">
+                                    <th>
+                                        NOMBRE
+                                    </th>
+                                    <th>Opciones&nbsp;&nbsp;&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in (IEnumerable<PFD_ROLES>)ViewBag.roles)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NOMBRE)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLinkImage("pencil", "Edit", "Editar", new { id = item.ID }, new { @class = "iconLink ", data_url = @Url.Action("Edit", "Roles", new { id = item.ID }) })
+                                            @Html.ActionLinkImage("remove-sign", "Delete", "Eliminar", new { id = item.ID }, new { @class = "iconLink ", data_url = @Url.Action("Delete", "Roles", new { id = item.ID }) })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    @using (Html.BeginForm())
+                    {
+                        <div class="validation-summary">
+                            @Html.CValidationSummary(false, CustomHelpers.SummaryFormatter)
+                        </div>
+                        <div class="row form-group col-sm-12">
+                            <a href="#"  class="btn btn-primary btnRefresh" >Refrescar</a>
+                            <a class="btn dynamicTest btn-success" data-toggle="modal" href="#editRoleModal">Mostrar modal</a>
+                            <input type="submit" value="Enviar" class="btn btn-warning" />
+                        </div>
+                    }
+                </div>
+
+            </fieldset>
+        </div>
+    </div>
+</div>
+@Html.Hidden("r", Url.Action("Edit", "Roles", new { id = 181 }))
+<div class="partialmodal">
+    @*@Html.Partial("_CreateRolePartial", new PFD_ROLES())*@
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            function GenerateLinks(id) {
+                var links = '';
+                links += '<a href="javascript:void(0);" data-toggle="tooltip" class="' + tableLinksColor + 'editAction" title="Editar" data-url="' + $('#editRoleUrl').val() + '/' + id + '" ><i class="glyphicon glyphicon-pencil "></i></a>';
+                links += '<a href="javascript:void(0);" data-toggle="tooltip" class="' + tableLinksColor + 'deleteAction" title="Eliminar" data-url="' + $('#deleteRoleUrl').val() + '/' + id + '" ><i class="glyphicon glyphicon-remove-sign "></a>';
+
+                return links;
+            }
+            $('.btnRefresh').on('click', function () {
+                CRefreshTable('.rolesTable', $('#updateRolesTableUrl').val(), GenerateLinks);
+            });
+
+            $('.dynamicTest').on('click', function () {
+                $.validator.unobtrusive.parse('.partialModal');
+            });
+            $(document).on('click', '.btnSubmit', function (e) {
+                e.preventDefault();
+                $('.dynamicForm').validate();
+            });
+
+            $.get(
+                $('#r').val(),
+                null,
+                function (result) {
+                    $('.partialmodal').html(result);
+                },
+                "json"
+            );
+        });
+    </script>
+}

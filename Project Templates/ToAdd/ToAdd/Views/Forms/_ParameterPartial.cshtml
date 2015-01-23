@@ -1,0 +1,76 @@
+﻿@model ParameterViewModel
+
+@{
+    var mode = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "createParameterModal" : (string)ViewBag.Mode;
+
+    var label = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "Crear Nuevo Parametro" : "Editar datos de Parametro";
+
+    var action = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "CreateParameter" : "EditParameter";
+    var submitClass = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "createParameterSubmit" : "editParameterSubmit";
+    var formClass = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "createParameterFrm" : "editParameterFrm";
+}
+
+<div class="modal modal-wide fade" id="@mode" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@label</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm(action, "Forms", FormMethod.Post, new { @class = "standard-form dynamicForm " + formClass }))
+                {
+                    @Html.HiddenFor(model => model.ID)
+                    @Html.HiddenFor(model => model.ID_PROCEDIMIENTO)
+                    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+                    {
+                        <div class="alert alert-dismissable alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            @Html.ValidationSummary(true)
+                        </div>
+                    }
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            @Html.CLabelFor(m => m.NOMBRE)
+                            @Html.CTextBoxFor(m => m.NOMBRE)
+                            @Html.CValidationMessageFor(m => m.NOMBRE)
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @Html.Hidden("ParameterInternal", Model.PARAMETRO)
+                            @Html.CLabelFor(m => m.PARAMETRO)
+                            @*<label for="PARAMETRO" class="control-label">
+                                    @Html.DisplayNameFor(mbox => mbox.PARAMETRO)&nbsp;&nbsp;<i data-toggle="tooltip" title="Parametros Sugeridos (Click aquí)" class="glyphicon glyphicon-question-sign allowedParams"></i>
+                                </label>*@
+                            @Html.CDropDownListFor(m => m.PARAMETRO, new SelectList(new List<string>()), null, new { @class = "chosen" })
+                            @Html.CValidationMessageFor(m => m.PARAMETRO)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            @*@Html.CLabelFor(m => m.TIPO)*@
+                            <label for="TIPO" class="control-label">
+                                @Html.DisplayNameFor(mbox => mbox.TIPO)&nbsp;&nbsp;<i data-toggle="tooltip" title="Ver Tipo(Base de datos)" class="glyphicon glyphicon-question-sign allowedParams"></i>
+                            </label>
+                            @Html.CDropDownListFor(m => m.TIPO, null, null, new { @class = "chosen" })
+                            @Html.CValidationMessageFor(m => m.TIPO)
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @Html.CLabelFor(m => m.REQUERIDO)
+                            @Html.CheckBoxFor(m => m.REQUERIDO, new { @class = "switchInput" })
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btnSubmit @(submitClass)">Guardar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

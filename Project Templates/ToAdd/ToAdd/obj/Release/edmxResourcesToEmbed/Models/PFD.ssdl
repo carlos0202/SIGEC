@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DGII_PFD.Models.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="PFD_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_PROCEDIMIENTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="CODIGO_RESPUESTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PFD_PARAMETROS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROCEDIMIENTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="1000" Nullable="false" />
+    <Property Name="PARAMETRO" Type="varchar2" MaxLength="1000" Nullable="false" />
+    <Property Name="REQUERIDO" Type="number" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="TIPO" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="PFD_PROCEDIMIENTOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="1000" Nullable="false" />
+    <Property Name="PROCEDIMIENTO" Type="varchar2" MaxLength="1000" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="3500" />
+    <Property Name="HABILITADO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ESTANDARIZADO" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="PFD_PROCEDIMIENTOS_ROLES">
+    <Key>
+      <PropertyRef Name="ID_PROCEDIMIENTO" />
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_PROCEDIMIENTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ROL" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PFD_ROLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="varchar2" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PFD_ROLES_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID_ROL" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PFD_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_USUARIO" Type="varchar2" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_LOG_PROCEDIMIENTO">
+    <End Role="PFD_PROCEDIMIENTOS" Type="Self.PFD_PROCEDIMIENTOS" Multiplicity="1" />
+    <End Role="PFD_LOG" Type="Self.PFD_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_PROCEDIMIENTOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_LOG">
+        <PropertyRef Name="ID_PROCEDIMIENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOG_USUARIO">
+    <End Role="PFD_USUARIOS" Type="Self.PFD_USUARIOS" Multiplicity="1" />
+    <End Role="PFD_LOG" Type="Self.PFD_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_USUARIOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_LOG">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROCEDIMIENTO">
+    <End Role="PFD_PROCEDIMIENTOS" Type="Self.PFD_PROCEDIMIENTOS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PFD_PARAMETROS" Type="Self.PFD_PARAMETROS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_PROCEDIMIENTOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_PARAMETROS">
+        <PropertyRef Name="ID_PROCEDIMIENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROCEDIMIENTO_ROL">
+    <End Role="PFD_PROCEDIMIENTOS" Type="Self.PFD_PROCEDIMIENTOS" Multiplicity="1" />
+    <End Role="PFD_PROCEDIMIENTOS_ROLES" Type="Self.PFD_PROCEDIMIENTOS_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_PROCEDIMIENTOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_PROCEDIMIENTOS_ROLES">
+        <PropertyRef Name="ID_PROCEDIMIENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROL_PROCEDIMIENTO">
+    <End Role="PFD_ROLES" Type="Self.PFD_ROLES" Multiplicity="1" />
+    <End Role="PFD_PROCEDIMIENTOS_ROLES" Type="Self.PFD_PROCEDIMIENTOS_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_ROLES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_PROCEDIMIENTOS_ROLES">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROL_USUARIO">
+    <End Role="PFD_ROLES" Type="Self.PFD_ROLES" Multiplicity="1" />
+    <End Role="PFD_ROLES_USUARIOS" Type="Self.PFD_ROLES_USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_ROLES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_ROLES_USUARIOS">
+        <PropertyRef Name="ID_ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_ROL">
+    <End Role="PFD_USUARIOS" Type="Self.PFD_USUARIOS" Multiplicity="1" />
+    <End Role="PFD_ROLES_USUARIOS" Type="Self.PFD_ROLES_USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PFD_USUARIOS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PFD_ROLES_USUARIOS">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DGII_PFDModelsStoreContainer">
+    <EntitySet Name="PFD_LOG" EntityType="Self.PFD_LOG" Schema="TAXCHOC" store:Type="Tables" />
+    <EntitySet Name="PFD_PARAMETROS" EntityType="Self.PFD_PARAMETROS" Schema="TAXCHOC" store:Type="Tables" />
+    <EntitySet Name="PFD_PROCEDIMIENTOS" EntityType="Self.PFD_PROCEDIMIENTOS" Schema="TAXCHOC" store:Type="Tables" />
+    <EntitySet Name="PFD_PROCEDIMIENTOS_ROLES" EntityType="Self.PFD_PROCEDIMIENTOS_ROLES" Schema="TAXCHOC" store:Type="Tables" />
+    <EntitySet Name="PFD_ROLES" EntityType="Self.PFD_ROLES" Schema="TAXCHOC" store:Type="Tables" />
+    <EntitySet Name="PFD_ROLES_USUARIOS" EntityType="Self.PFD_ROLES_USUARIOS" Schema="TAXCHOC" store:Type="Tables" />
+    <EntitySet Name="PFD_USUARIOS" EntityType="Self.PFD_USUARIOS" Schema="TAXCHOC" store:Type="Tables" />
+    <AssociationSet Name="FK_LOG_PROCEDIMIENTO" Association="Self.FK_LOG_PROCEDIMIENTO">
+      <End Role="PFD_PROCEDIMIENTOS" EntitySet="PFD_PROCEDIMIENTOS" />
+      <End Role="PFD_LOG" EntitySet="PFD_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOG_USUARIO" Association="Self.FK_LOG_USUARIO">
+      <End Role="PFD_USUARIOS" EntitySet="PFD_USUARIOS" />
+      <End Role="PFD_LOG" EntitySet="PFD_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROCEDIMIENTO" Association="Self.FK_PROCEDIMIENTO">
+      <End Role="PFD_PROCEDIMIENTOS" EntitySet="PFD_PROCEDIMIENTOS" />
+      <End Role="PFD_PARAMETROS" EntitySet="PFD_PARAMETROS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROCEDIMIENTO_ROL" Association="Self.FK_PROCEDIMIENTO_ROL">
+      <End Role="PFD_PROCEDIMIENTOS" EntitySet="PFD_PROCEDIMIENTOS" />
+      <End Role="PFD_PROCEDIMIENTOS_ROLES" EntitySet="PFD_PROCEDIMIENTOS_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROL_PROCEDIMIENTO" Association="Self.FK_ROL_PROCEDIMIENTO">
+      <End Role="PFD_ROLES" EntitySet="PFD_ROLES" />
+      <End Role="PFD_PROCEDIMIENTOS_ROLES" EntitySet="PFD_PROCEDIMIENTOS_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROL_USUARIO" Association="Self.FK_ROL_USUARIO">
+      <End Role="PFD_ROLES" EntitySet="PFD_ROLES" />
+      <End Role="PFD_ROLES_USUARIOS" EntitySet="PFD_ROLES_USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_ROL" Association="Self.FK_USUARIO_ROL">
+      <End Role="PFD_USUARIOS" EntitySet="PFD_USUARIOS" />
+      <End Role="PFD_ROLES_USUARIOS" EntitySet="PFD_ROLES_USUARIOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

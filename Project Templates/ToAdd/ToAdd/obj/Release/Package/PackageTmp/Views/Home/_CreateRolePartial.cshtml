@@ -1,0 +1,50 @@
+﻿@model DGII_PFD.Models.PFD_ROLES
+
+@{
+    var mode = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "createRoleModal": (string)ViewBag.Mode;
+
+    var action = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "Create" : "Edit";
+    var submitClass = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "createRoleSubmit" : "editRoleSubmit";
+    var formClass = string.IsNullOrEmpty((string)ViewBag.Mode) ?
+        "createRoleFrm" : "editRoleFrm";    
+}
+
+<div class="modal fade" id="@mode" tabindex="-1" role="dialog" data-focus-on="input:first" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Crear Nuevo Rol</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm(action, "Roles", FormMethod.Post, new { @class = "standard-form dynamicForm " + formClass, role = "form" }))
+                {
+                    @Html.HiddenFor(model => model.ID)
+                    if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+                    {
+                        <div class="alert alert-dismissable alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            @Html.ValidationSummary(true)
+                        </div>
+                    }
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-sm-offset-3">
+                            @Html.CLabelFor(m => m.NOMBRE)
+                            @Html.CTextBoxFor(m => m.NOMBRE)
+                            @Html.CValidationMessageFor(m => m.NOMBRE)
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btnSubmit @(submitClass)">Guardar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

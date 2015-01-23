@@ -1,0 +1,57 @@
+﻿@model DGII_PFD.Models.UsersViewModel
+
+@{
+    ViewBag.Title = "Editar Usuario";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>Actualizar datos de usuario</legend>
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.Nombre)
+                    @Html.HiddenFor(model => model.UserId)
+                    <div class="">
+                        <div class="panel panel-success col-sm-6">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.Nombre)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.Nombre)
+                            </div>
+                        </div>
+                        <div class="panel panel-success col-sm-6">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(model => model.NOMBRE_USUARIO)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.DisplayFor(model => model.NOMBRE_USUARIO)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-xs-12">
+                            @Html.CLabelFor(m => m.RoleId)
+                            @Html.CDropDownListFor(m => m.RoleId, null, null, new { @class = "chosen" })
+                            @Html.CValidationMessageFor(m => m.RoleId)
+                        </div>
+                    </div>
+
+                    <div class="row form-group col-sm-12">
+                        <input type="submit" class="btn btn-primary ml2" value="Guardar" />
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
