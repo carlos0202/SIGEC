@@ -15,13 +15,11 @@
         <div class="well">
             <fieldset class="employee2">
                 <legend>@_("Patients_IndexLegend")</legend>
-                <div class="form-group col-lg-12">
-                    <p>
-                        @Html.ActionLink(_("lblNew"), "Create", null, new { @class = "btn btn-primary fr mb10" })
-                    </p>
+                <div class="form-group col-lg-12 pr0">
+                    @Html.ActionLink(_("lblNew"), "Create", null, new { @class = "btn btn-primary fr mb10" })
                 </div>
-                <div class="form-group scroll form_table col-lg-12">
-                    <table class="table table-striped table-bordered table-hover">
+                <div class="table-responsive">
+                    <table class=" table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>
@@ -69,7 +67,7 @@
                                     </td>
                                     <td>
                                         @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "button_link edit_link" })
-                                        @Html.ActionLink("MedicaHistory", "MedicalHistory", new { id = item.ID }, new { @class = "button_link add_link", title = _("Patients_MedicalHistory"), data_toggle="tooltip" })
+                                        @Html.ActionLink("MedicaHistory", "MedicalHistory", new { id = item.ID }, new { @class = "button_link add_link", title = _("Patients_MedicalHistory"), data_toggle = "tooltip" })
                                         @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "button_link view_link" })
                                         @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "button_link delete_link" })
                                     </td>
@@ -78,6 +76,7 @@
                         </tbody>
                     </table>
                 </div>
+
             </fieldset>
         </div>
     </div>

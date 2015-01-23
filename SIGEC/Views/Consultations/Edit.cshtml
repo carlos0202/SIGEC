@@ -132,7 +132,7 @@
                                         <a class="btn btn-primary addMedicine" data-toggle="modal" href="#medicinesModal">@_("lblAdd") </a>
                                         @Html.Hidden("addMedicineUrl", Url.Action("AddMedicine", "Consultations"))
                                     </div>
-                                    <div class="form-group col-lg-12 scroll">
+                                    <div class="table-responsive">
 
                                         @Html.Hidden("editMedUrl", Url.Action("EditMedicine", "Consultations"))
                                         @Html.Hidden("deleteMedUrl", Url.Action("DeleteMedicine", "Consultations"))

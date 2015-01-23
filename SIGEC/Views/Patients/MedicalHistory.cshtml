@@ -97,7 +97,7 @@
                                         <a class="btn btn-primary addfBack" data-toggle="modal" href="#familybackmodal">@_("lblAdd") </a>
                                         @Html.Hidden("addFbackUrl", Url.Action("AddFamilyDisease", "Patients", new { id = Model.medicalhistoryID }))
                                     </div>
-                                    <div class="form-group col-lg-12 scroll">
+                                    <div class="table-responsive">
                                         @Html.Hidden("updateFDTable", Url.Action("GetFamilyDiseases", "Patients", new { id = Model.medicalhistoryID }))
                                         @Html.Hidden("editFDUrl", Url.Action("EditFamilyDisease", "Patients"))
                                         @Html.Hidden("deleteFDUrl", Url.Action("DeleteFamilyDisease", "Patients"))

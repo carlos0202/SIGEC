@@ -300,12 +300,6 @@ D:\Documentos\Visual Studio 2012\Projects\SIGEC\SIGEC\obj\Debug\SIGEC.Resources.
 D:\Documentos\Visual Studio 2012\Projects\SIGEC\SIGEC\obj\Debug\SIGEC.csproj.GenerateResource.Cache
 D:\Documentos\Visual Studio 2012\Projects\SIGEC\SIGEC\obj\Debug\SIGEC.dll
 D:\Documentos\Visual Studio 2012\Projects\SIGEC\SIGEC\obj\Debug\SIGEC.pdb
-C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.csprojResolveAssemblyReference.cache
-C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.Resources.Language.resources
-C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.Resources.Language.en.resources
-C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.csproj.GenerateResource.Cache
-C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.dll
-C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.pdb
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\SIGEC.dll.config
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\SIGEC.dll
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\SIGEC.pdb
@@ -365,4 +359,10 @@ C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\DotNetOpenAuth.OAuth.Consum
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\DotNetOpenAuth.OAuth.xml
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.Resources.Language.resources
+C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.Resources.Language.en.resources
+C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.csproj.GenerateResource.Cache
 C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\en\SIGEC.resources.dll
+C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.dll
+C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.pdb
+C:\Users\Cagonzalec\Documents\GitHub\SIGEC\SIGEC\obj\Debug\SIGEC.csprojResolveAssemblyReference.cache

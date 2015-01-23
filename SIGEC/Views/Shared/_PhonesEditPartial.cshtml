@@ -90,7 +90,7 @@
     <div class="form-group col-lg-12">
         <a class="btn btn-primary" data-toggle="modal" href="#phonesAddModal">@_("lblAdd") </a>
     </div>
-    <div class="form-group col-lg-12 scroll">
+    <div class="table-responsive">
         @Html.Hidden("updatePhoneUrl", Url.Action("UpdatePhone", "Employees"))
         @Html.Hidden("editPhoneUrl", Url.Action("EditPhone", "Employees"))
         @Html.Hidden("deletePhoneUrl", Url.Action("DeletePhone", "GlobalHelpers"))
