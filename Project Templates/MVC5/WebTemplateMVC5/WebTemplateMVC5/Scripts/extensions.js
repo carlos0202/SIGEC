@@ -28,7 +28,7 @@ var tableLinksColor = ' iconLink ';
 //$.widget.bridge('uibutton', $.ui.button);
 //Resolver colisión entre el nombre el jquery ui tooltip
 //y el Bootstrap tooltip
-$.widget.bridge('uitooltip', $.ui.tooltip);
+//$.widget.bridge('uitooltip', $.ui.tooltip);
 
 //focus en el primer input de cada dialogo modal.
 $(document).on("shown.bs.modal", '.modal', function () {
@@ -191,14 +191,11 @@ function SwalConfirm(text, CallBack, title, buttonClass, buttonText) {
 $(window).load(function () {
     $(".pageloadSpinner").fadeOut("slow");
     if ($('#ResultMessage').val()) {
-        SwalSuccess($('#ResultMessage').val(), '');
-    }
-    if ($('#mensajeRespuesta').val()) {
-        if ($('#codigoRespuesta').val() == 1) {
-            SwalSuccess($('#mensajeRespuesta').val());
+        if ($('#MessageCode').val() == '1') {
+            SwalSuccess($('#ResultMessage').val(), '');
         }
         else {
-            SwalError($('#mensajeRespuesta').val());
+            SwalError($('#ResultMessage').val());
         }
     }
 });
@@ -237,19 +234,6 @@ function FnReloadDefinitions() {
         },
         "sPaginationType": "full_numbers"
     });
-    $('.switchInput').bootstrapSwitch({
-        onColor: "primary",
-        offColor: "danger",
-        onText: "SI",
-        offText: "NO"
-    });
-    //Inicializando Bootstrap Switch
-    $("input[type=checkbox].switchInput ").bootstrapSwitch({
-        onColor: "primary",
-        offColor: "danger",
-        onText: "SI",
-        offText: "NO"
-    });
 
     $(document.body).tooltip({
         selector: '[data-toggle="tooltip"]'
@@ -269,26 +253,10 @@ function FnReloadDefinitions() {
     $(".chosen-multiple").chosen().change();
     $(".chosen-multiple").trigger('chosen:updated');
 
-    //bootstrap checkbox initializations
-    //$('input[type="checkbox"]').bootstrapSwitch();
-
-    //Datepicker initializations
-    $('.defaultPicker').datepicker({
-        dateFormat: 'yy/mm/dd',
-        changeMonth: true,
-        changeYear: true
-    });
-
     $('.modal-body :input[type="hidden"]').each(function () {
         $(this).addClass('ignore');
     });
 
-    $('.futurePicker').datepicker({
-        dateFormat: 'yy/mm/dd',
-        changeMonth: true,
-        changeYear: true,
-        minDate: 1
-    });
 }
 
 //Prevenir evento de click en botones con la clase especificada.
@@ -585,4 +553,22 @@ String.prototype.format = function (placeholders) {
         }
 
     });
+
+    $.fn.Examples = function () {
+        $('.ajaxLink').on('click', function (e) {
+            e.preventDefault();
+            var me = $(this);
+            $.get(me.attr('href'), null, function () { });
+            return false;
+            //$.ajax({
+            //    url: me.attr('href'),
+            //    data: null,
+            //    dataType: 'json',
+            //    type: 'POST',
+            //    global: false,
+            //    success: function (result) {
+            //    }
+            //});
+        });
+    }
 }(jQuery));
