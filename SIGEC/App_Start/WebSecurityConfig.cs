@@ -84,7 +84,7 @@ namespace SIGEC
 
             ///insertar datos de menús y acciones en la base de datos
             ///para el manejo de permisos.
-            GlobalHelpers.InsertMenusAndActions();
+            //GlobalHelpers.InsertMenusAndActions();
 
             ///asignar permisos sobre todas las acciones al rol Admin
             using (var db = new SIGECContext())
