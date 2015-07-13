@@ -1,5 +1,0 @@
-﻿<configuration>
-   <system.web>
-       <globalization uiCulture="auto:en" culture="auto:en-GB" enableClientBasedCulture="true" />
-   </system.web>
-</configuration>
