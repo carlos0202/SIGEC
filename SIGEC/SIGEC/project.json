@@ -32,7 +32,7 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel",
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls http://localhost:17202",
     "ef": "EntityFramework.Commands"
   },
 
