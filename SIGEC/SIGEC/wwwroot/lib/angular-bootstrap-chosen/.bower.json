@@ -23,6 +23,6 @@
     "commit": "60c47cc88cea37733ace3bf14dfba036a9ceafeb"
   },
   "_source": "git://github.com/wangshijun/angular-bootstrap-chosen.git",
-  "_target": "*",
+  "_target": "~1.0.10",
   "_originalSource": "angular-bootstrap-chosen"
 }
