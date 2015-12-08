@@ -43,9 +43,13 @@ input[type=text], input[type=password], textarea, select{
 	list-style-type: none;
 }
 
-.menu li.active{
-	font-weight: bold;
-}
+.menu li.active {
+      font-weight: bold;
+    }
+
+    .menu li a {
+      color: #eee;
+    }
 
 #sidebar{
 	background: #2A2C36;
