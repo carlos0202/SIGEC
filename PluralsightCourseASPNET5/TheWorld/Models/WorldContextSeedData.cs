@@ -102,6 +102,7 @@ namespace TheWorld.Models
 				_context.Stops.AddRange(usTrip.Stops);
 				_context.Trips.Add(worldTrip);
 				_context.Stops.AddRange(worldTrip.Stops);
+				_context.SaveChanges();
             }
         }
     }
