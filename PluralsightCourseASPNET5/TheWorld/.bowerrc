@@ -1,5 +1,6 @@
 {
   "directory": "wwwroot/lib",
   "registry": "http://bower.herokuapp.com",
-  "strict-ssl": false
+  "strict-ssl": false,
+  "postBuffer": 157268400
 }

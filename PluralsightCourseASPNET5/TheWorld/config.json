@@ -1,5 +1,8 @@
 {
   "AppSettings": {
-    "SiteEmailAddress": "me@aol.com"
+    "SiteEmailAddress": "putmailhere@example.com"
+  },
+  "Data": {
+    "WorldContextConn": "server=(localdb)\\v11.0;Database=TheWorldDB;Trusted_Connection=true;MultipleActiveResultSets=true;"
   }	
 }
