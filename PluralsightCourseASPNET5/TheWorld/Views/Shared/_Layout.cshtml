@@ -9,18 +9,27 @@
 	<meta charset="utf-8" />
 	
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/lib/bootswatch/yeti/bootstrap.min.css" />
 	<link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" />
 </head>
 
 <body>
 	<div id="sidebar">
-		<img class="headshot" src="~/img/user1.png" alt="headshot" />
-		<span>Carlos Gonzalez</span>
+		@if(User.Identity.IsAuthenticated)
+		{
+			<img class="headshot" src="~/img/user1.png" alt="headshot" />
+			<span>@User.Identity.Name</span>
+		}
 		<ul class="nav">
 			<li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
 			<li><a asp-controller="App" asp-action="About">About</a></li>
 			<li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+			@if(User.Identity.IsAuthenticated)
+			{
+				<li><a asp-controller="App" asp-action="Trips">My Trips</a></li>
+				<li><a asp-controller="Auth" asp-action="Logout" >Logout</a></li>	
+			}
 		</ul>
 	</div>
 	<div id="wrapper">

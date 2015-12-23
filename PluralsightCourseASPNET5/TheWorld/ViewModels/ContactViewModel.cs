@@ -1,9 +1,8 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace TheWorld.ViewModels
 {
-  public class ContactViewModel
+    public class ContactViewModel
   {
     [Required]
     [StringLength(255, MinimumLength = 5)]

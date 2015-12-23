@@ -1,6 +1,7 @@
 {
   "AppSettings": {
-    "SiteEmailAddress": "putmailhere@example.com"
+    "SiteEmailAddress": "putmailhere@example.com",
+    "BingKey": "Aizca3af9-8G8sJ_4sJFGa-E0y6YO1l6-Kj5efCf8vuusQa50wAhvZMWIhpHySs_"
   },
   "Data": {
     "WorldContextConn": "server=(localdb)\\v11.0;Database=TheWorldDB;Trusted_Connection=true;MultipleActiveResultSets=true;"

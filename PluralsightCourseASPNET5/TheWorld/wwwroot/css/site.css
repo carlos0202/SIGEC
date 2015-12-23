@@ -92,3 +92,16 @@ textarea{
 	-o-transition: margin-left ease .25s;
 	-webkit-transition: margin-left ease .25;
 }
+
+/**Remove firefox outline on button click**/
+button::-moz-focus-inner:focus {
+  border: 0 !important;
+}
+
+li::-moz-focus-inner:focus {
+  border: 0 !important;
+}
+
+a, a:active, a:focus, li, li.active, li:focus{
+    outline: none !important; /* Works in Firefox, Chrome, IE8 and above */
+}

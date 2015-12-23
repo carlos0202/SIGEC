@@ -1,0 +1,42 @@
+@model IEnumerable<TheWorld.Models.Trip>
+
+@{
+	ViewBag.Title = "Home Page";
+}
+
+@section Scripts {
+	<script src="~/lib/angular/angular.min.js"></script>
+}
+
+<div class="row" ng-app>
+	
+	<div>{{ "Two plus two equals: " + (2+2) }}</div>
+	
+	<div class="col-md-6">
+		<h2>The World</h2>
+		<p>This will be a fun website soon!</p>
+		
+		<form>
+			<div class="form-group">
+				<label>Date</label>
+				<input class="form-control" />
+			</div>
+			<div class="form-group">
+				<label>Location</label>
+				<input class="form-control" />
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Add" class="btn btn-success" />
+			</div>
+		</form>
+	</div>
+	<div class="col-md-6">
+		<h2>The Map</h2>
+		<ul>
+      @foreach (var trip in Model)
+      {
+        <li>@trip.Name (@(trip.Created))</li>
+      }
+    </ul>
+	</div>
+</div>
