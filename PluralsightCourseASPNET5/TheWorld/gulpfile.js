@@ -10,3 +10,9 @@ var gulp = require("gulp"),
   project = require("./project.json");
 
 gulp.task('watch', shell.task(['dnx-watch web']));
+
+gulp.task('minify', function(){
+  return gulp.src('wwwroot/js/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('wwwroot/lib/_app'));
+});
