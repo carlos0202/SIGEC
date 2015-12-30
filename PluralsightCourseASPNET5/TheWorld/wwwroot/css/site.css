@@ -105,3 +105,8 @@ li::-moz-focus-inner:focus {
 a, a:active, a:focus, li, li.active, li:focus{
     outline: none !important; /* Works in Firefox, Chrome, IE8 and above */
 }
+
+#map{
+	width: 100%;
+	height: 600px;
+}
