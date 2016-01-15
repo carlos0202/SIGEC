@@ -5,6 +5,7 @@ var gulp = require("gulp"),
   concat = require("gulp-concat"),
   cssmin = require("gulp-cssmin"),
   uglify = require("gulp-uglify"),
+  shell = require("gulp-shell"),
   project = require("./project.json");
 
 var paths = {
@@ -45,3 +46,11 @@ gulp.task("min:css", function() {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+gulp.task('watch', shell.task(['dnx-watch web']));
+
+gulp.task('minify', function(){
+  return gulp.src('wwwroot/js/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('wwwroot/lib/_app'));
+});
