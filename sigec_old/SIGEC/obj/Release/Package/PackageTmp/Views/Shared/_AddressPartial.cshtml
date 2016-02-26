@@ -1,0 +1,50 @@
+﻿@model SIGEC.Models.Address
+
+
+<div class="row">
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.country)
+        @Html.CTextBoxFor(model => model.country)
+        @Html.CValidationMessageFor(model => model.country)
+    </div>
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.city)
+        @Html.CTextBoxFor(model => model.city)
+        @Html.CValidationMessageFor(model => model.city)
+    </div>
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.municipality)
+        @Html.CTextBoxFor(model => model.municipality)
+        @Html.CValidationMessageFor(model => model.municipality)
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.sector)
+        @Html.CTextBoxFor(model => model.sector)
+        @Html.CValidationMessageFor(model => model.sector)
+    </div>
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.street)
+        @Html.CTextBoxFor(model => model.street)
+        @Html.CValidationMessageFor(model => model.street)
+    </div>
+    <div class="form-group col-lg-4">
+        @Html.CLabelFor(model => model.number)
+        @Html.CTextBoxFor(model => model.number)
+        @Html.CValidationMessageFor(model => model.number)
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

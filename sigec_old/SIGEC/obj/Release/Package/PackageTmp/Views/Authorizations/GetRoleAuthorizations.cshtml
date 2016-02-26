@@ -1,0 +1,42 @@
+﻿@using SIGEC.Models.ViewModels
+
+@model AuthorizationsRolePartial
+
+@{
+    double maxRecords = Model.menus.Count;
+    double firstDiv = Math.Round((maxRecords / 3.0));
+    int i = (int)firstDiv;
+    int lower = Model.menus.FirstOrDefault().Actions.Select(a => a.ID).Min();
+}
+
+<div class="panel-group" id="accordion">
+    @foreach (SIGEC.Models.Menu item in Model.menus)
+    {
+        <div class="panel panel-default col-lg-12">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@item.ID">
+                        @((item.displayName == null) ? item.name : item.displayName)
+                    </a>
+                </h4>
+            </div>
+            <div id="@item.ID" class="panel-collapse collapse" >
+                <div class="panel-body">
+                    @foreach (SIGEC.Models.Action action in item.Actions)
+                    {
+                        <label class="permissions">
+                            @if (string.IsNullOrEmpty(action.displayName))
+                            {
+                                <input type="checkbox" name="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.name
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="actions" value="@action.ID" @((Model.SelectedActions.Contains(action.ID) ? "checked" : ""))/> @action.displayName    
+                            }
+                        </label>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,109 @@
+﻿@using System.Globalization
+
+@model SIGEC.Models.ViewModels.DoctorRulesViewModel
+
+@{
+    ViewBag.Title = _("Doctor_Rules");
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1><img alt="doctor_picture" src="~/Images/doctor.png" />&nbsp;@ViewBag.Title.</h1>
+            <h2></h2>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.doctorID)
+                <fieldset class="create">
+                    <legend>@_("Doctor_LegendRules")</legend>
+
+                    @if (isAdmin)
+                    {
+                        <h4 class="section-subtitle">@_("lbl_PersonInfo")</h4>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">@Html.LabelFor(model => model.doctor.User.firstName)</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        @Html.DisplayFor(model => model.doctor.User.firstName)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">@Html.LabelFor(model => model.doctor.User.lastName)</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        @Html.DisplayFor(model => model.doctor.User.lastName)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><label>@_("lblSpeciality")</label></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        @Model.doctor.speciality
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    }
+
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            @Html.CLabelFor(m => m.consultationPrice)
+                            @Html.CTextBoxFor(m => m.consultationPrice, new { @class = "money" })
+                            @Html.CValidationMessageFor(m => m.consultationPrice)
+                        </div>
+                        <div class="form-group col-lg-6">
+                            @Html.CLabelFor(m => m.maxPatients)
+                            @Html.CTextBoxFor(m => m.maxPatients, new { @class = "digits" })
+                            @Html.CValidationMessageFor(m => m.maxPatients)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            @Html.CLabelFor(m => m.consultationStart)
+                            @Html.CTextBoxFor(m => m.consultationStart, new { @class = "minHour CtimePicker" })
+                            @Html.CValidationMessageFor(m => m.consultationStart)
+                        </div>
+                        <div class="form-group col-lg-6">
+                            @Html.CLabelFor(m => m.consultationEnd)
+                            @Html.CTextBoxFor(m => m.consultationEnd, new { @class = "maxHour CtimePicker" })
+                            @Html.CValidationMessageFor(m => m.consultationEnd)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            @Html.CLabelFor(m => m.availableDays)
+                            @Html.CListBoxFor(m => m.availableDays, null, new { @class = "chosen-multiple" })
+                            @Html.CValidationMessageFor(m => m.availableDays)
+                        </div>
+                    </div>
+                    <div class="row form-group col-lg-4 pr0">
+                        <input type="submit" class="btn btnform btn-primary col-lg-5 ml2 " value="@_("lblSave")" />
+                        @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btnform btn-default ml3 col-lg-5" })
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $.fn.doctorRulesInit();
+        });
+    </script>
+}

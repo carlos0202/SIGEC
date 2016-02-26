@@ -1,0 +1,25 @@
+﻿@section featured {
+    <div class="row">
+        <div class="col-lg-12">
+            <hgroup class="title">
+                <h1>
+                    <img src="~/Images/help_icon.png" />&nbsp;@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3>@Html.Raw(_("Help_Content_Title"))</h3>
+        @Html.Raw(_("Help_Content"))
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $('p').addClass('justify');
+    </script>
+}

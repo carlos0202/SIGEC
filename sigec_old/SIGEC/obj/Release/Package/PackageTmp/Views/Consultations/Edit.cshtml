@@ -1,0 +1,200 @@
+﻿@model SIGEC.Models.ViewModels.ConsultationsViewModel
+
+@{
+    ViewBag.Title = _("Consultations_Edit");
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1><img src="~/Images/consultations.png" />&nbsp;@ViewBag.Title.</h1>
+            <h2></h2>
+        </hgroup>
+        <div class="well">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "standard-form" }))
+            {
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
+                @Html.HiddenFor(model => model.patientID)
+                @Html.HiddenFor(model => model.doctorID)
+                <fieldset class="employe">
+                    <legend>@_("Consultations_CreateLegend")</legend>
+
+                    <h4 class="section-subtitle">@_("lbl_PersonInfo")</h4>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.firstName)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Html.DisplayFor(model => model.Patient.UserAccount.firstName)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.lastName)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Html.DisplayFor(model => model.Patient.UserAccount.lastName)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">@Html.LabelFor(model => model.Patient.UserAccount.dni)</h3>
+                                </div>
+                                <div class="panel-body">
+                                    @Model.Patient.UserAccount.dni.CFormat("dni")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#maindata">@_("lblConsultationsMainTab")</a></li>
+                            <li class=""><a data-toggle="tab" href="#indications">@_("lblConsultationsIndications")</a></li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div id="maindata" class="tab-pane fade  active in">
+                                <h4 class="section-subtitle">@_("lblConsultationsMainTab")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.reason)
+                                        @Html.CTextAreaFor(model => model.reason)
+                                        @Html.CValidationMessageFor(model => model.reason)
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.treatment)
+                                        @Html.CTextAreaFor(model => model.treatment)
+                                        @Html.CValidationMessageFor(model => model.treatment)
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.comments)
+                                        @Html.CTextAreaFor(model => model.comments)
+                                        @Html.CValidationMessageFor(model => model.comments)
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.referredTo)
+                                        @Html.CTextBoxFor(model => model.referredTo)
+                                        @Html.CValidationMessageFor(model => model.referredTo)
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        @Html.CLabelFor(model => model.nextAppointment)
+                                        @Html.CTextBoxFor(model => model.nextAppointment, new { @class = "futurePicker"  })
+                                        @Html.CValidationMessageFor(model => model.nextAppointment)
+                                    </div>
+                                </div>
+                                @Html.Hidden("updateDiagnosticTableUrl", Url.Action("UpdateDiagnosticTable", "Consultations", new { ID = Model.ID }))
+                                @Html.Partial("_DiagnosticsPartial", new SIGEC.Models.Disease())
+
+                                <div class="row form-group col-lg-12">
+                                    <a href="#indications" data-val="maindata" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-right"></i></a>                                    
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                            <div id="indications" class="tab-pane fade">
+                                <h4 class="section-subtitle">@_("lblConsultationsIndications")</h4>
+
+                                <h4>@_("Analysis_Title")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.analysisID)
+                                        @Html.CDropDownListFor(model => model.analysisID, null, null, new { @class = "chosen-multiple", multiple = "true" })
+                                    </div>
+                                </div>
+                                <h4>@_("Studies_Title")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.studyID)
+                                        @Html.CDropDownListFor(model => model.studyID, null, null, new { @class = "chosen-multiple", multiple = "true" })
+                                    </div>
+                                </div>
+                                <h4>@_("Procedures_Title")</h4>
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        @Html.CLabelFor(model => model.procedureID)
+                                        @Html.CDropDownListFor(model => model.procedureID, null, null, new { @class = "chosen-multiple", multiple = "true" })
+                                    </div>
+                                </div>
+
+                                <h4>@_("lblPrescriptions_SectionTitle")</h4>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-12">
+                                        <label>@_("lblPrescriptionMedicines_AddTitle")</label>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <a class="btn btn-primary addMedicine" data-toggle="modal" href="#medicinesModal">@_("lblAdd") </a>
+                                        @Html.Hidden("addMedicineUrl", Url.Action("AddMedicine", "Consultations"))
+                                    </div>
+                                    <div class="form-group col-lg-12">
+
+                                        @Html.Hidden("editMedUrl", Url.Action("EditMedicine", "Consultations"))
+                                        @Html.Hidden("deleteMedUrl", Url.Action("DeleteMedicine", "Consultations"))
+                                        @Html.Hidden("updateMedicinesTableUrl", Url.Action("UpdateMedicinesTable", "Consultations", new { ID = Model.ID }))
+                                        <table class="defaultTable medicinesTable table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>@_("lblMedicament")</th>
+                                                    <th>@_("lblAdministration")</th>
+                                                    <th>@_("lblOptions")</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade dn ignore" id="medicinesModal" data-focus-on="input:first" data-width="760">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title medTitle">@_("lblMedicamentAdd")</h4>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="modal-body medBody">
+                                            <div class="row">
+                                                @Html.Hidden("pmID", "")
+                                                <div class="form-group col-lg-12">
+                                                    <label>@_("lblMedicament")</label>
+                                                    @Html.CDropDownList("medicineID", null, null, new { @class = "chosen" })
+                                                </div>
+                                                <div class="form-group col-lg-12">
+                                                    <label>@_("lblAdministration")</label>
+                                                    @Html.CTextArea("administration")
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" data-dismiss="modal" class="btn btn-default">@_("lblClose")</a>                                        
+                                        <input type="button" class="btn btn-primary medicineAction" value="@_("lblSave")" />
+                                    </div>
+                                </div>
+
+                                <div class="row form-group col-lg-12">
+                                    <a href="#maindata" data-val="indications" class="btn btn-default tabPager"><i class="glyphicon glyphicon-arrow-left"></i></a>
+                                    <input type="submit" class="btn btn-primary save" value="@_("lblSave")" />
+                                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default cancel" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $.fn.consultationEditInit();
+        });
+    </script>
+}

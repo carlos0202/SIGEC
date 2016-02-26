@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AnalysisSchema" targetNamespace="http://tempuri.org/AnalysisSchema.xsd" xmlns:mstns="http://tempuri.org/AnalysisSchema.xsd" xmlns="http://tempuri.org/AnalysisSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AnalysisSchema" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AnalysisSchema" msprop:Generator_UserDSName="AnalysisSchema">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AnalysisSchema" msprop:Generator_TableClassName="AnalysisSchemaDataTable" msprop:Generator_TableVarName="tableAnalysisSchema" msprop:Generator_TablePropName="_AnalysisSchema" msprop:Generator_RowDeletingName="AnalysisSchemaRowDeleting" msprop:Generator_RowChangingName="AnalysisSchemaRowChanging" msprop:Generator_RowEvHandlerName="AnalysisSchemaRowChangeEventHandler" msprop:Generator_RowDeletedName="AnalysisSchemaRowDeleted" msprop:Generator_UserTableName="AnalysisSchema" msprop:Generator_RowChangedName="AnalysisSchemaRowChanged" msprop:Generator_RowEvArgName="AnalysisSchemaRowChangeEvent" msprop:Generator_RowClassName="AnalysisSchemaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="analysis" msprop:Generator_ColumnVarNameInTable="columnanalysis" msprop:Generator_ColumnPropNameInRow="analysis" msprop:Generator_ColumnPropNameInTable="analysisColumn" msprop:Generator_UserColumnName="analysis" type="xs:string" minOccurs="0" />
+              <xs:element name="fullName" msprop:Generator_ColumnVarNameInTable="columnfullName" msprop:Generator_ColumnPropNameInRow="fullName" msprop:Generator_ColumnPropNameInTable="fullNameColumn" msprop:Generator_UserColumnName="fullName" type="xs:string" minOccurs="0" />
+              <xs:element name="age" msprop:Generator_ColumnVarNameInTable="columnage" msprop:Generator_ColumnPropNameInRow="age" msprop:Generator_ColumnPropNameInTable="ageColumn" msprop:Generator_UserColumnName="age" type="xs:int" minOccurs="0" />
+              <xs:element name="creationDate" msprop:Generator_ColumnVarNameInTable="columncreationDate" msprop:Generator_ColumnPropNameInRow="creationDate" msprop:Generator_ColumnPropNameInTable="creationDateColumn" msprop:Generator_UserColumnName="creationDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nextAppointment" msprop:Generator_ColumnVarNameInTable="columnnextAppointment" msprop:Generator_ColumnPropNameInRow="nextAppointment" msprop:Generator_ColumnPropNameInTable="nextAppointmentColumn" msprop:Generator_UserColumnName="nextAppointment" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

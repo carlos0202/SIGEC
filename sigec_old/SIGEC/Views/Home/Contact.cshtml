@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <hgroup class="title">
+            <h1>
+                <img src="~/Images/contact.png" />&nbsp;&nbsp;@_("Contact_Title").</h1>
+            <h5>@_("Contact_Msg")</h5>
+        </hgroup>
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">@_("lblPhones")</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <span>
+                        <img src="~/Images/phone.png" /><b>&nbsp;@_("lbloffice"):</b> 809.687.2155</span>
+                </p>
+                <p>
+                    <span>
+                        <img src="~/Images/cell.png" /><b>&nbsp;@_("lblcel"):</b> 809.849.6668</span>
+                </p>
+
+            </div>
+        </div>
+        <br />
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <img src="~/Images/email.png" />&nbsp;&nbsp;@_("lblEmail")</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <span><a href="mailto:freddyf@hotmail.com">freddyf@hotmail.com </a></span>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <img src="~/Images/address.png" />&nbsp;&nbsp;@_("lbladdress")</h3>
+            </div>
+            <div class="panel-body">
+                <p class="justify">
+                    @Html.Raw(_("Office_address"))
+                </p>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <img src="~/Images/Map.png" />&nbsp;&nbsp;@_("lblmap")</h3>
+            </div>
+            <div class="panel-body">
+                <div class="map">
+                    <p>
+                        <iframe style="border:0" width="640" height="480" src="https://maps.google.com.do/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=Centro+Otorrinolaringolog%C3%ADa+y+Especialidades,+Av+27+de+Febrero,+Santo+Domingo&amp;aq=0&amp;oq=ce&amp;sll=18.476343,-69.906039&amp;sspn=0.006858,0.013078&amp;ie=UTF8&amp;hq=&amp;hnear=Centro+Otorrinolaringolog%C3%ADa+y+Especialidades,+Av+27+de+Febrero,+San+Juan+Bosco,+Santo+Domingo,+Los+Alcarrizos,+Distrito+Nacional&amp;t=m&amp;ll=18.476353,-69.906006&amp;spn=0.039075,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

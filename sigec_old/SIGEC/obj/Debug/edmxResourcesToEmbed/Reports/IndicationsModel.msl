@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SIGECModelStoreContainer" CdmEntityContainer="SIGECEntities">
+    <FunctionImportMapping FunctionImportName="PrintAnalysisIndication" FunctionName="SIGECModel.Store.PrintAnalysisIndication">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SIGECModel.PrintAnalysisIndication_Result">
+          <ScalarProperty Name="analysis" ColumnName="analysis" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="nextAppointnment" ColumnName="nextAppointnment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PrintProcedureIndication" FunctionName="SIGECModel.Store.PrintProcedureIndication">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SIGECModel.PrintProcedureIndication_Result">
+          <ScalarProperty Name="procedureName" ColumnName="procedureName" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="nextAppointnment" ColumnName="nextAppointnment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PrintStudyIndication" FunctionName="SIGECModel.Store.PrintStudyIndication">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SIGECModel.PrintStudyIndication_Result">
+          <ScalarProperty Name="studyName" ColumnName="studyName" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="nextAppointnment" ColumnName="nextAppointnment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PrintPrescription" FunctionName="SIGECModel.Store.PrintPrescription">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SIGECModel.PrintPrescription_Result">
+          <ScalarProperty Name="medicine" ColumnName="medicine" />
+          <ScalarProperty Name="dosage" ColumnName="dosage" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="nextAppointment" ColumnName="nextAppointment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PrintIncomes" FunctionName="SIGECModel.Store.PrintIncomes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SIGECModel.PrintIncomes_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="insurer" ColumnName="insurer" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="reportDate" ColumnName="reportDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

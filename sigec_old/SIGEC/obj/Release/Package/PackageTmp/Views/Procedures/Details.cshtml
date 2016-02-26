@@ -1,0 +1,51 @@
+﻿@model SIGEC.Models.Procedure
+
+@{
+    ViewBag.Title = _("Procedures_Details");
+}
+
+<hgroup class="title">
+    <h1><imgalt="procedures_picture" src="~/Images/procedures.png" />&nbsp;@ViewBag.Title.</h1>
+    <h2></h2>
+</hgroup>
+
+<div class="well">
+    <div class="col-lg-12">
+        @using (Html.BeginForm())
+        {
+            <fieldset>
+                <legend>@_("Procedures_EditLegend")</legend>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">@Html.LabelFor(model => model.name)</h3>
+                        </div>
+                        <div class="panel-body">
+                            @Html.DisplayFor(model => model.name)
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">@Html.LabelFor(model => model.description)</h3>
+                        </div>
+                        <div class="panel-body">
+                            @Html.DisplayFor(model => model.description)
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">@Html.LabelFor(model => model.status)</h3>
+                        </div>
+                        <div class="panel-body">
+                            @((Model.status) ? _("MActive") : _("MInactive"))
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 row pl0 form-group">
+                    @Html.ActionLink(_("lblEdit"), "Edit", new { id=Model.ID },  new { @class = "btn btn-primary col-lg-2 ml2" })
+                    @Html.ActionLink(_("lblCancel"), "Index", null, new { @class = "btn btn-default col-lg-2" })
+                </div>
+            </fieldset>
+        }
+    </div>
+</div>

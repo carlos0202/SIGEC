@@ -1,0 +1,1816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Analysis_Create" xml:space="preserve">
+    <value>Register new Analysis</value>
+    <comment>mensaje para el view create de Análisis</comment>
+  </data>
+  <data name="Analysis_Delete" xml:space="preserve">
+    <value>Delete registered Analysis</value>
+    <comment>mensaje para el title del view delete (Análisis)</comment>
+  </data>
+  <data name="Analysis_Details" xml:space="preserve">
+    <value>Analysis detailed information</value>
+    <comment>mensaje para el title del view details (Análisis)</comment>
+  </data>
+  <data name="Analysis_Edit" xml:space="preserve">
+    <value>Update Analysis data</value>
+    <comment>mensaje para el title del view edit (Análisis)</comment>
+  </data>
+  <data name="Analysis_IndexLegend" xml:space="preserve">
+    <value>Analysis types in the medical consultory</value>
+    <comment>mensaje para el legend del index</comment>
+  </data>
+  <data name="Analysis_LegendCreate" xml:space="preserve">
+    <value>New Analysis data</value>
+    <comment>mensaje para el legend del create (Analisis)</comment>
+  </data>
+  <data name="Analysis_LegendEdit" xml:space="preserve">
+    <value>Registered Analysis data</value>
+    <comment>mensaje para el legend del edit (Analisis)</comment>
+  </data>
+  <data name="Analysis_Title" xml:space="preserve">
+    <value>Analysis</value>
+  </data>
+  <data name="Delete_Confirmation" xml:space="preserve">
+    <value>Are you sure that you want to delete this?</value>
+    <comment>mensaje para subtitulo de los views delete </comment>
+  </data>
+  <data name="Employees_Title" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="Employee_Create" xml:space="preserve">
+    <value>Register new Employee</value>
+  </data>
+  <data name="Employee_LegendCreate" xml:space="preserve">
+    <value>New Employee data</value>
+  </data>
+  <data name="Home_Title" xml:space="preserve">
+    <value>Main Page</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Language_Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="Layout_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Layout_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Layout_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Layout_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Layout_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lblAdmin" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="lblCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lblCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="lblCreateDate" xml:space="preserve">
+    <value>Create date</value>
+    <comment>mensaje global para los campos (CreateDate)</comment>
+  </data>
+  <data name="lblDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>mensaje global para los campos (Descripción)</comment>
+  </data>
+  <data name="lblDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="lblEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="lblHello" xml:space="preserve">
+    <value>Hello, </value>
+    <comment>mensaje para el partial del login</comment>
+  </data>
+  <data name="lblIndex" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="lblLogin" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="lblLogoff" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="lblName" xml:space="preserve">
+    <value>Name</value>
+    <comment>mensaje global para los campos (Nombre)</comment>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="lblOptions" xml:space="preserve">
+    <value>Options</value>
+    <comment>mensaje global para el apartado de opciones en los datatables</comment>
+  </data>
+  <data name="lblRegister" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="lblSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lblUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="lblUserContact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="lbl_LoginInfo" xml:space="preserve">
+    <value>Log in information</value>
+  </data>
+  <data name="lbl_PersonInfo" xml:space="preserve">
+    <value>Personal information</value>
+  </data>
+  <data name="Employee_LegendIndex" xml:space="preserve">
+    <value>Consultory registered Employees</value>
+  </data>
+  <data name="lblActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lblCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="lblConfirmPass" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="lblCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="lblInactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="lblMunicipality" xml:space="preserve">
+    <value>Municipality</value>
+  </data>
+  <data name="lblNumber" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="lblSector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="lblStreet" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="PassConfirmErr" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="StringLengthErr" xml:space="preserve">
+    <value>The field {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+    <comment>mensaje para la opcion del enum Genders (Female)</comment>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="lblBornDate" xml:space="preserve">
+    <value>Born date</value>
+  </data>
+  <data name="lblDni" xml:space="preserve">
+    <value>Identification</value>
+  </data>
+  <data name="lblEmail" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="lblFirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="lblGender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="lblLastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="lblMaritalStatus" xml:space="preserve">
+    <value>Martial status</value>
+  </data>
+  <data name="lblOccupation" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="lblPhone" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="lblPhoneNotes" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="lblPhoneType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="lblUsername" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Male</value>
+    <comment>mensaje para la opción del enum Genders (Male)</comment>
+  </data>
+  <data name="Married" xml:space="preserve">
+    <value>Married</value>
+    <comment>mensaje para la opcion del enum MaritalStatus (Married)</comment>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>Single</value>
+    <comment>mensaje para la opcion del enum MaritalStatus (Single)</comment>
+  </data>
+  <data name="Work" xml:space="preserve">
+    <value>Work</value>
+  </data>
+  <data name="lblAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lblEqPhoneErr" xml:space="preserve">
+    <value>You can't add the same phone number </value>
+    <comment>Mensaje de validación numero de telefono repetido</comment>
+  </data>
+  <data name="lblPhoneAdded" xml:space="preserve">
+    <value>Phone number added</value>
+    <comment>Mensaje para cuando se agrega un telefono.</comment>
+  </data>
+  <data name="lblPhoneAddMsg" xml:space="preserve">
+    <value>You must complete all required fields (number, type)</value>
+    <comment>Mensaje de validación para agregar teléfono.</comment>
+  </data>
+  <data name="lblPhoneDeleteConfirm" xml:space="preserve">
+    <value>Are you sure to remove this phone number?</value>
+    <comment>Mensaje de confirmación para eliminar el número de telefono</comment>
+  </data>
+  <data name="lblPhones" xml:space="preserve">
+    <value>Phones</value>
+    <comment>Header para la tabla de telefonos.</comment>
+  </data>
+  <data name="Employee_Edit" xml:space="preserve">
+    <value>Update Employee information</value>
+  </data>
+  <data name="Studies_Create" xml:space="preserve">
+    <value>Register new Study</value>
+  </data>
+  <data name="Studies_CreateLegend" xml:space="preserve">
+    <value>New Study data</value>
+  </data>
+  <data name="Studies_Delete" xml:space="preserve">
+    <value>Delete registered Study</value>
+  </data>
+  <data name="Studies_Details" xml:space="preserve">
+    <value>Study detailed information</value>
+  </data>
+  <data name="Studies_Edit" xml:space="preserve">
+    <value>Update Study data</value>
+  </data>
+  <data name="Studies_EditLegend" xml:space="preserve">
+    <value>Registered Study data</value>
+  </data>
+  <data name="Studies_IndexLegend" xml:space="preserve">
+    <value>Study types in the medical consultory</value>
+  </data>
+  <data name="Studies_Title" xml:space="preserve">
+    <value>Studies</value>
+  </data>
+  <data name="Procedures_Create" xml:space="preserve">
+    <value>Register new Procedure</value>
+  </data>
+  <data name="Procedures_CreateLegend" xml:space="preserve">
+    <value>New Procedure data</value>
+  </data>
+  <data name="Procedures_Delete" xml:space="preserve">
+    <value>Delete registered Procedure</value>
+  </data>
+  <data name="Procedures_Details" xml:space="preserve">
+    <value>Procedure detailed information</value>
+  </data>
+  <data name="Procedures_Edit" xml:space="preserve">
+    <value>Update Procedure data</value>
+  </data>
+  <data name="Procedures_EditLegend" xml:space="preserve">
+    <value>Registered Procedure data</value>
+  </data>
+  <data name="Procedures_IndexLegend" xml:space="preserve">
+    <value>Procedure types in the medical consultory</value>
+  </data>
+  <data name="Procedures_Title" xml:space="preserve">
+    <value>Procedures</value>
+  </data>
+  <data name="lblAccountStatus" xml:space="preserve">
+    <value>Active User account? </value>
+  </data>
+  <data name="lblChangeLoginData" xml:space="preserve">
+    <value>Change employee login information?</value>
+  </data>
+  <data name="lblStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Employee_Delete" xml:space="preserve">
+    <value>Delete registered Employee</value>
+  </data>
+  <data name="Employee_Details" xml:space="preserve">
+    <value>Employee detailed information</value>
+  </data>
+  <data name="Employee_EditLegend" xml:space="preserve">
+    <value>Registered Employee data</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="lblReligion" xml:space="preserve">
+    <value>Religion</value>
+  </data>
+  <data name="lblSystemInfo" xml:space="preserve">
+    <value>System inner info</value>
+  </data>
+  <data name="lblDosage" xml:space="preserve">
+    <value>Recommended dosage</value>
+  </data>
+  <data name="lblEmailErr" xml:space="preserve">
+    <value>The field {0} is not a valid E-Mail Address.</value>
+    <comment>Mensaje de validación de correo electrónico</comment>
+  </data>
+  <data name="lblGenericName" xml:space="preserve">
+    <value>Generic name</value>
+  </data>
+  <data name="lblType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="lblUsage" xml:space="preserve">
+    <value>Usage</value>
+  </data>
+  <data name="lblUsernameTaken" xml:space="preserve">
+    <value>The username '{0}' has been already taken</value>
+  </data>
+  <data name="Medicaments_Create" xml:space="preserve">
+    <value>Register new Medicament</value>
+  </data>
+  <data name="Medicaments_CreateLegend" xml:space="preserve">
+    <value>New Medicament data</value>
+  </data>
+  <data name="Medicaments_Delete" xml:space="preserve">
+    <value>Delete registered Medicament</value>
+  </data>
+  <data name="Medicaments_Details" xml:space="preserve">
+    <value>Medicament detailed information</value>
+  </data>
+  <data name="Medicaments_Edit" xml:space="preserve">
+    <value>Update medicament Data</value>
+  </data>
+  <data name="Medicaments_EditLegend" xml:space="preserve">
+    <value>Registered Medicament data</value>
+  </data>
+  <data name="Medicaments_IndexLegend" xml:space="preserve">
+    <value>Registered Medicaments in the consultory</value>
+  </data>
+  <data name="Medicaments_Title" xml:space="preserve">
+    <value>Medicaments</value>
+  </data>
+  <data name="Patients_Create" xml:space="preserve">
+    <value>Register new Patient</value>
+  </data>
+  <data name="Patients_CreateLegend" xml:space="preserve">
+    <value>New Patient data</value>
+  </data>
+  <data name="Patients_Delete" xml:space="preserve">
+    <value>Delete registered Patient</value>
+  </data>
+  <data name="Patients_Details" xml:space="preserve">
+    <value>Patient detailed information</value>
+  </data>
+  <data name="Patients_Edit" xml:space="preserve">
+    <value>Update Patient data</value>
+  </data>
+  <data name="Patients_EditLegend" xml:space="preserve">
+    <value>Registered Patient data</value>
+  </data>
+  <data name="Patients_IndexLegend" xml:space="preserve">
+    <value>Registered Patients in the medical consultory</value>
+  </data>
+  <data name="Patients_Title" xml:space="preserve">
+    <value>Patients</value>
+  </data>
+  <data name="lblMedicamentStatus" xml:space="preserve">
+    <value>Active medicament?</value>
+  </data>
+  <data name="MActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="MInactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="lblAnalysisStatus" xml:space="preserve">
+    <value>Active Analysis?</value>
+  </data>
+  <data name="lblProcedureStatus" xml:space="preserve">
+    <value>Active Procedure?</value>
+  </data>
+  <data name="lblStudyStatus" xml:space="preserve">
+    <value>Active Study?</value>
+  </data>
+  <data name="Insurers_Create" xml:space="preserve">
+    <value>Register new Insurer</value>
+  </data>
+  <data name="Insurers_CreateLegend" xml:space="preserve">
+    <value>New Insurer data</value>
+  </data>
+  <data name="Insurers_Delete" xml:space="preserve">
+    <value>Delete registered Insurer</value>
+  </data>
+  <data name="Insurers_Details" xml:space="preserve">
+    <value>Insurer detailed information</value>
+  </data>
+  <data name="Insurers_Edit" xml:space="preserve">
+    <value>Update Insurer data</value>
+  </data>
+  <data name="Insurers_EditLegend" xml:space="preserve">
+    <value>Registered Insurer Data</value>
+  </data>
+  <data name="Insurers_IndexLegend" xml:space="preserve">
+    <value>Registered Insurers in the consultory</value>
+  </data>
+  <data name="Insurers_Title" xml:space="preserve">
+    <value>Insurers</value>
+  </data>
+  <data name="lblInsurerStatus" xml:space="preserve">
+    <value>Active Insurer?</value>
+  </data>
+  <data name="lblRNC" xml:space="preserve">
+    <value>RNC</value>
+  </data>
+  <data name="lblPhoneExist" xml:space="preserve">
+    <value>This phone number already exist</value>
+  </data>
+  <data name="Appointments_Create" xml:space="preserve">
+    <value>Register new Appointment</value>
+  </data>
+  <data name="Appointments_CreateLegend" xml:space="preserve">
+    <value>New Appointment data</value>
+  </data>
+  <data name="Appointments_Delete" xml:space="preserve">
+    <value>Delete registered Appointment</value>
+  </data>
+  <data name="Appointments_Details" xml:space="preserve">
+    <value>Appointment detailed information</value>
+  </data>
+  <data name="Appointments_Edit" xml:space="preserve">
+    <value>Update Appointment data</value>
+  </data>
+  <data name="Appointments_EditLegend" xml:space="preserve">
+    <value>Registered Appointment data</value>
+  </data>
+  <data name="Appointments_IndexLegend" xml:space="preserve">
+    <value>Scheduled Appointments in the consultory</value>
+  </data>
+  <data name="Appointments_Title" xml:space="preserve">
+    <value>Appointments</value>
+  </data>
+  <data name="lblAppointmentDate" xml:space="preserve">
+    <value>Appointment date</value>
+  </data>
+  <data name="lblPatient" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="lblAdvancedSearch" xml:space="preserve">
+    <value>Advanced search</value>
+  </data>
+  <data name="lblbPatientAdvSerach" xml:space="preserve">
+    <value>Patient search by identification</value>
+  </data>
+  <data name="lblClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="lblDoctor" xml:space="preserve">
+    <value>Doctor</value>
+  </data>
+  <data name="lblNotFound" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblSearchCriteriaErr" xml:space="preserve">
+    <value>Enter a valid search criteria</value>
+  </data>
+  <data name="lblSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="lblSelectOption" xml:space="preserve">
+    <value>Select and option</value>
+  </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lblDcotorAPErr" xml:space="preserve">
+    <value>This doctor has no schedule for appointments</value>
+    <comment>mensaje de error para cuando no se ha creado la configuracion para las citas de un doctor.</comment>
+  </data>
+  <data name="lblDoctorConsDayErr" xml:space="preserve">
+    <value>This doctor does not hold consultations this day</value>
+    <comment>mensaje de error cuando el doctor no realiza consultas en un día determinado</comment>
+  </data>
+  <data name="lblDoctorMaxPatientsErr" xml:space="preserve">
+    <value>This doctor doesn't admit more than {0} patients per day. Seats out</value>
+    <comment>mensaje para cuando el numero máximo de consultas por día ha sido alcanzado</comment>
+  </data>
+  <data name="lblPatientAASErr" xml:space="preserve">
+    <value>This patient already has booked an appointment with this doctor</value>
+    <comment>mensaje cuando el paciente ya tiene una consulta con este doctor (Empleado)</comment>
+  </data>
+  <data name="lblPatientSAAErr" xml:space="preserve">
+    <value>You already has booked an appointment with this doctor</value>
+    <comment>mensaje cuando el paciente ya tiene una consulta con este doctor (Paciente)</comment>
+  </data>
+  <data name="lblPhoneModalAdd" xml:space="preserve">
+    <value>Add phone number</value>
+  </data>
+  <data name="lblPhoneModalEdit" xml:space="preserve">
+    <value>Update phone number</value>
+  </data>
+  <data name="Authorizations_Edit" xml:space="preserve">
+    <value>Users permissions by roles</value>
+  </data>
+  <data name="Authorizations_Title" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="lblRole" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Authorizations_EditLegend" xml:space="preserve">
+    <value>Choose permissions for the role</value>
+  </data>
+  <data name="lbl_FamilyBackground" xml:space="preserve">
+    <value>Background-inherited family diseases</value>
+  </data>
+  <data name="lbl_GinecoHistory" xml:space="preserve">
+    <value>Gynecologic &amp; obstetric history</value>
+  </data>
+  <data name="lbl_PathologicalBackground" xml:space="preserve">
+    <value>Pathological personal antecedents</value>
+  </data>
+  <data name="lbl_ToxicHabits" xml:space="preserve">
+    <value>Toxic Habits</value>
+  </data>
+  <data name="Patients_MedicalHistory" xml:space="preserve">
+    <value>Patient's Medical history</value>
+  </data>
+  <data name="lblAlcohol" xml:space="preserve">
+    <value>Alcohol</value>
+  </data>
+  <data name="lblDisease" xml:space="preserve">
+    <value>Disease</value>
+  </data>
+  <data name="lblDrugs" xml:space="preserve">
+    <value>Drugs</value>
+  </data>
+  <data name="lblFamilyMemBackAdd" xml:space="preserve">
+    <value>Add Background-inherited family disease</value>
+  </data>
+  <data name="lblFamilyMember" xml:space="preserve">
+    <value>Family Member</value>
+  </data>
+  <data name="lblMustFillAll" xml:space="preserve">
+    <value>you must fill all fields</value>
+  </data>
+  <data name="lblNaturalMedicines" xml:space="preserve">
+    <value>Natural Medicines</value>
+  </data>
+  <data name="lblOthers" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lblRegistryAdded" xml:space="preserve">
+    <value>Record successfully added</value>
+  </data>
+  <data name="lblRegistryDeleted" xml:space="preserve">
+    <value>Record succesfully deleted</value>
+  </data>
+  <data name="lblRegistryDeleteError" xml:space="preserve">
+    <value>Failed to delete record</value>
+  </data>
+  <data name="lblRegistryEdited" xml:space="preserve">
+    <value>Record succesfully edited</value>
+  </data>
+  <data name="lblRegistryEditError" xml:space="preserve">
+    <value>Failed to edit record</value>
+  </data>
+  <data name="lblRegistryError" xml:space="preserve">
+    <value>Failed to add record</value>
+  </data>
+  <data name="lblTobacco" xml:space="preserve">
+    <value>Tobacco</value>
+  </data>
+  <data name="lblAllergies" xml:space="preserve">
+    <value>Allergies</value>
+  </data>
+  <data name="lblCCF" xml:space="preserve">
+    <value>CCF</value>
+  </data>
+  <data name="lblChildhoodIllnesses" xml:space="preserve">
+    <value>Chillhood Illnesses</value>
+  </data>
+  <data name="lblCurrentCondition" xml:space="preserve">
+    <value>Current Condition</value>
+  </data>
+  <data name="lblDiabetes" xml:space="preserve">
+    <value>Diabetes</value>
+  </data>
+  <data name="lblGastrointestinal" xml:space="preserve">
+    <value>Gastrointestinal</value>
+  </data>
+  <data name="lblGDM" xml:space="preserve">
+    <value>GDM</value>
+  </data>
+  <data name="lblHTN" xml:space="preserve">
+    <value>HTN</value>
+  </data>
+  <data name="lblMenarche" xml:space="preserve">
+    <value>Menarche</value>
+  </data>
+  <data name="lblMenstruation" xml:space="preserve">
+    <value>Menstruation</value>
+  </data>
+  <data name="lblPreclampsia" xml:space="preserve">
+    <value>Preclampsia / Eclampsia</value>
+  </data>
+  <data name="lblPsychiatric" xml:space="preserve">
+    <value>Psychiatric</value>
+  </data>
+  <data name="lblRespiratory" xml:space="preserve">
+    <value>Respiratory System</value>
+  </data>
+  <data name="lblSkinAppendages" xml:space="preserve">
+    <value>Skin and Appendages</value>
+  </data>
+  <data name="lblSurgeries" xml:space="preserve">
+    <value>Surgeries</value>
+  </data>
+  <data name="lblTransfusions" xml:space="preserve">
+    <value>Transfusions</value>
+  </data>
+  <data name="lblUrinaryReproductive" xml:space="preserve">
+    <value>Urinary and Reproductive</value>
+  </data>
+  <data name="Consultations_IndexLegend" xml:space="preserve">
+    <value>consultations realized in the medical consultory</value>
+  </data>
+  <data name="Consultations_Title" xml:space="preserve">
+    <value>Consultations</value>
+  </data>
+  <data name="lblNoPermissions" xml:space="preserve">
+    <value>Have no permissions</value>
+  </data>
+  <data name="lblRememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="lblUnauthorized_Description" xml:space="preserve">
+    <value>You don't have permissions to access this content. Contact your administrator to get access.</value>
+  </data>
+  <data name="lblUnauthorized_LogOff" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="lblUnauthorized_LogOffDesc" xml:space="preserve">
+    <value>and access with an account with the required permission level.</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Use a local account to log in.</value>
+  </data>
+  <data name="Unauthorized_Title" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="Payments_Title" xml:space="preserve">
+    <value>Payments</value>
+  </data>
+  <data name="lblDiscount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="lblInsurer" xml:space="preserve">
+    <value>Insurer</value>
+  </data>
+  <data name="lblInsurerCoberture" xml:space="preserve">
+    <value>Insurer Coberture</value>
+  </data>
+  <data name="lblLessThanErr" xml:space="preserve">
+    <value>{0} must be less than price</value>
+  </data>
+  <data name="lblNetAmount" xml:space="preserve">
+    <value>Net Amount</value>
+  </data>
+  <data name="lblPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="lblRegisterPayment" xml:space="preserve">
+    <value>Register Payment</value>
+  </data>
+  <data name="PayConsultation_Title" xml:space="preserve">
+    <value>Medical consultation Payment</value>
+  </data>
+  <data name="lblPatientAmount" xml:space="preserve">
+    <value>Patient payment</value>
+  </data>
+  <data name="Layout_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Consultations_Create" xml:space="preserve">
+    <value>Register new Medical Consultation</value>
+  </data>
+  <data name="Consultations_CreateLegend" xml:space="preserve">
+    <value>Medical Consultation data</value>
+  </data>
+  <data name="Consultations_Edit" xml:space="preserve">
+    <value>Update Medical consultation data</value>
+  </data>
+  <data name="lblConsultReason" xml:space="preserve">
+    <value>Reason for Consultation</value>
+  </data>
+  <data name="lblDiagnostic" xml:space="preserve">
+    <value>Diagnostic</value>
+  </data>
+  <data name="lblObservations" xml:space="preserve">
+    <value>Observations</value>
+  </data>
+  <data name="lblTreatment" xml:space="preserve">
+    <value>Treatment</value>
+  </data>
+  <data name="sFirst" xml:space="preserve">
+    <value>First</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sInfo" xml:space="preserve">
+    <value>Showing _START_ to _END_ of _TOTAL_ records</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sInfoEmpty" xml:space="preserve">
+    <value>Showing 0 to 0 of 0 records</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sInfoFiltered" xml:space="preserve">
+    <value>(filtered from _MAX_ total records)</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sLast" xml:space="preserve">
+    <value>Last</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sLengthMenu" xml:space="preserve">
+    <value>Display _MENU_ records per page</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sNext" xml:space="preserve">
+    <value>Next</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sPrevious" xml:space="preserve">
+    <value>Previous</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sSearch" xml:space="preserve">
+    <value>Search</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="sZeroRecords" xml:space="preserve">
+    <value>No records found.</value>
+    <comment>datatable olanguage labels</comment>
+  </data>
+  <data name="lblDiagnostics" xml:space="preserve">
+    <value>Diagnostics</value>
+  </data>
+  <data name="lblDiagnoseAdd" xml:space="preserve">
+    <value>Add patient diagnostic</value>
+  </data>
+  <data name="lblDiagnoseCode" xml:space="preserve">
+    <value>Diagnostic code</value>
+  </data>
+  <data name="lblDiagnoseEdit" xml:space="preserve">
+    <value>Update patient diagnostic</value>
+  </data>
+  <data name="lblFamilyMemBackEdit" xml:space="preserve">
+    <value>Update Background-inherited family disease</value>
+  </data>
+  <data name="lblConsultationsIndications" xml:space="preserve">
+    <value>Patient indications</value>
+  </data>
+  <data name="lblConsultationsMainTab" xml:space="preserve">
+    <value>Consultation main data</value>
+  </data>
+  <data name="lblPrescriptions_SectionTitle" xml:space="preserve">
+    <value>Prescriptions</value>
+  </data>
+  <data name="lblAdministration" xml:space="preserve">
+    <value>Administración</value>
+  </data>
+  <data name="lblMedicament" xml:space="preserve">
+    <value>Medicamento</value>
+  </data>
+  <data name="lblMedicamentAdd" xml:space="preserve">
+    <value>Agregar medicamento a la receta</value>
+  </data>
+  <data name="lblMedicamentEdit" xml:space="preserve">
+    <value>Actualizar medicamento de la receta</value>
+  </data>
+  <data name="lblPrescriptionMedicines_AddTitle" xml:space="preserve">
+    <value>Medicines assigned on the prescription</value>
+  </data>
+  <data name="lblNextAppointment" xml:space="preserve">
+    <value>Next appointment</value>
+  </data>
+  <data name="lblReferredTo" xml:space="preserve">
+    <value>Referred to</value>
+  </data>
+  <data name="lblAnalysisIndications" xml:space="preserve">
+    <value>Select the analysis to indicate</value>
+  </data>
+  <data name="lblProceduresIndications" xml:space="preserve">
+    <value>Select the procedures to indicate</value>
+  </data>
+  <data name="lblSaveNCConfirmation" xml:space="preserve">
+    <value>you'll not can update this information after send it, Continue?</value>
+  </data>
+  <data name="lblStudiesIndications" xml:space="preserve">
+    <value>Select the studies to indicate</value>
+  </data>
+  <data name="Doctors_Title" xml:space="preserve">
+    <value>Doctors</value>
+  </data>
+  <data name="Doctor_Create" xml:space="preserve">
+    <value>Register new Doctor</value>
+  </data>
+  <data name="Doctor_Delete" xml:space="preserve">
+    <value>Delete registered Doctor</value>
+  </data>
+  <data name="Doctor_Details" xml:space="preserve">
+    <value>Doctor detailed information</value>
+  </data>
+  <data name="Doctor_Edit" xml:space="preserve">
+    <value>Update Doctor information</value>
+  </data>
+  <data name="Doctor_EditLegend" xml:space="preserve">
+    <value>Registered Doctor data</value>
+  </data>
+  <data name="Doctor_LegendCreate" xml:space="preserve">
+    <value>New Doctor data</value>
+  </data>
+  <data name="Doctor_LegendIndex" xml:space="preserve">
+    <value>Consultory registered Doctor</value>
+  </data>
+  <data name="lblSpeciality" xml:space="preserve">
+    <value>Speciality</value>
+  </data>
+  <data name="Doctor_LegendRules" xml:space="preserve">
+    <value>Set Consultation Rules</value>
+  </data>
+  <data name="Doctor_Rules" xml:space="preserve">
+    <value>Consultation Rules</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Friday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Monday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Thursday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
+    <comment>days of week enum translation</comment>
+  </data>
+  <data name="Error_Legend" xml:space="preserve">
+    <value>An error was ocurred while processing your request</value>
+  </data>
+  <data name="Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="lblAvailableDays" xml:space="preserve">
+    <value>Consultation days</value>
+  </data>
+  <data name="lblConsultationEnd" xml:space="preserve">
+    <value>Consultation end time</value>
+  </data>
+  <data name="lblConsultationPrice" xml:space="preserve">
+    <value>Consultation price</value>
+  </data>
+  <data name="lblConsultationStart" xml:space="preserve">
+    <value>Consultation start time</value>
+  </data>
+  <data name="lblErrorDetails" xml:space="preserve">
+    <value>Error detailed information</value>
+  </data>
+  <data name="lblErrorExceptionDetails" xml:space="preserve">
+    <value>See exception details</value>
+  </data>
+  <data name="lblMaxPatients" xml:space="preserve">
+    <value>Patients per day</value>
+  </data>
+  <data name="Manage_Legend" xml:space="preserve">
+    <value>Update user account information</value>
+  </data>
+  <data name="Manage_Title" xml:space="preserve">
+    <value>Manage user data</value>
+  </data>
+  <data name="lblNoPatientSelectErr" xml:space="preserve">
+    <value>There's no patient to select</value>
+  </data>
+  <data name="Account_ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="lblPatientWAppointment" xml:space="preserve">
+    <value>Patient with scheduled appointment?</value>
+  </data>
+  <data name="lblPaymentAmountsErr" xml:space="preserve">
+    <value>Discount Amount or insurance contribution invalid</value>
+  </data>
+  <data name="lblPaymentDataErr" xml:space="preserve">
+    <value>Error in data, check the discount and coverage</value>
+  </data>
+  <data name="lblPaymentForm" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="lblPaymentMadeErr" xml:space="preserve">
+    <value>El pago para esta consulta ya ha sido realizado</value>
+  </data>
+  <data name="lblPriceNotFoundErr" xml:space="preserve">
+    <value>Price data not found for this doctor</value>
+  </data>
+  <data name="lblReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="lblResetMail" xml:space="preserve">
+    <value>Email from your account</value>
+  </data>
+  <data name="Payments_Legend" xml:space="preserve">
+    <value>Consultaion payment data</value>
+  </data>
+  <data name="ResetPassword_Legend" xml:space="preserve">
+    <value>Data to reset your password</value>
+  </data>
+  <data name="lblAccountDisabledErr" xml:space="preserve">
+    <value>This account is disabled.</value>
+  </data>
+  <data name="lblIncorrectPasswordErr" xml:space="preserve">
+    <value>Incorrect username or password.</value>
+  </data>
+  <data name="lblInvalidMailErr" xml:space="preserve">
+    <value>There is no user with this email address</value>
+  </data>
+  <data name="lblNoSuchUsernameErr" xml:space="preserve">
+    <value>This username doesn't exist.</value>
+  </data>
+  <data name="lblSendMailErr" xml:space="preserve">
+    <value>There was an error sending the email</value>
+  </data>
+  <data name="lblSendMailSuccess" xml:space="preserve">
+    <value>A message has been sent to your email with the new login data from your account.</value>
+  </data>
+  <data name="ResetPassword_BodyMsg" xml:space="preserve">
+    <value>Hi,  {0} &lt;br /&gt;
+You have requested a password reset for your user account in the consultory. &lt;br /&gt;&lt;br /&gt;
+
+New login information
+Username: &lt;b&gt;{1}&lt;/b&gt;&lt;br /&gt;
+Password: &lt;b&gt;{2}&lt;/b&gt;&lt;br /&gt;
+
+After sucesfully log in into your account, please change your password.</value>
+    <comment>password reset message string to mail</comment>
+  </data>
+  <data name="ResetPasword_SubjectMsg" xml:space="preserve">
+    <value>SIGEC - Reset your password</value>
+    <comment>password reset message string to mail</comment>
+  </data>
+  <data name="lblFooterRights" xml:space="preserve">
+    <value>All rights reserved</value>
+  </data>
+  <data name="lblGoHome" xml:space="preserve">
+    <value>Go Home</value>
+  </data>
+  <data name="NotFoundDescription" xml:space="preserve">
+    <value>&lt;h1&gt;Page Not Found &lt;small class="notFoundHeader"&gt;Error 404&lt;/small&gt;&lt;/h1&gt;
+                &lt;br /&gt;&lt;p&gt;The page you requested could not be found, either contact your webmaster or try again.&lt;/p&gt;
+                &lt;p&gt;&lt;b&gt;Or you could just press this button:&lt;/b&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="NotFound_Title" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="lblForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Help_Content" xml:space="preserve">
+    <value>&lt;br/&gt;
+
+&lt;h4&gt;&lt;span class="label label-default"&gt;&lt;a href = "#about_manual"&gt;About the Manual&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+&lt;br/&gt;
+&lt;ol&gt;
+&lt;a href	= "#purpose"&gt;&lt;li&gt;Purpose&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#function"&gt;&lt;li&gt;Document Function&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#definitions"&gt;&lt;li&gt;Definitions , Acronyms and Abbreviations&lt;/li&gt;&lt;/a&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h4&gt;&lt;span class="label label-default"&gt;&lt;a href = "#introduction"&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;br/&gt;
+
+&lt;h4&gt;&lt;span class="label label-default"&gt;&lt;a href	= "#user_interface"&gt;User Interface&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;br/&gt;
+
+&lt;ol&gt;
+&lt;a href	= "#start_sigec"&gt;&lt;li&gt;Start SIGEC&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#logon_window"&gt;&lt;li&gt;Logon Window&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#home_window"&gt;&lt;li&gt;Home Window&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#about_us_window"&gt;&lt;li&gt;About Us Window&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#contact_window"&gt;&lt;li&gt;Contact Window&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#help_window"&gt;&lt;li&gt;Help Window&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#actions_menu"&gt;&lt;li&gt;Actions Menu&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#language_menu"&gt;&lt;li&gt;Language Menu&lt;/li&gt;&lt;/a&gt;
+&lt;a href = "#manage_window"&gt;&lt;li&gt;Manage Menu&lt;/li&gt;&lt;/a&gt;
+	&lt;ol type=a&gt; 
+		&lt;a href = "#analysis"&gt;&lt;li&gt;Analysis&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#studies"&gt;&lt;li&gt;Studies&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#procedures"&gt;&lt;li&gt;Procedures&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#employees"&gt;&lt;li&gt;Employees&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#patients2"&gt;&lt;li&gt;Patients&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#medicaments"&gt;&lt;li&gt;Medicaments&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#insurers"&gt;&lt;li&gt;Insurers&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#appointments"&gt;&lt;li&gt;Appointments&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#authorizations"&gt;&lt;li&gt;Authorizations&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#consultations2"&gt;&lt;li&gt;Consultations&lt;/li&gt;&lt;/a&gt;
+		&lt;a href = "#doctors"&gt;&lt;li&gt;Doctors&lt;/li&gt;&lt;/a&gt;
+	&lt;/ol&gt;
+	&lt;br/&gt;
+&lt;a href	 = "#payments_menu"&gt;&lt;li&gt;Payments Module&lt;/li&gt;&lt;/a&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h4&gt;&lt;span class="label label-default"&gt;&lt;a href	= "#patients"&gt;Patients Module&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;br/&gt;
+
+&lt;ol&gt;
+&lt;a href	= "#view_patient"&gt;&lt;li&gt;View patient&lt;/li&gt;&lt;/a&gt;
+&lt;a href = "#find_patient"&gt;&lt;li&gt;Find patient&lt;/li&gt;&lt;/a&gt;
+&lt;a href = "#create_patient"&gt;&lt;li&gt;Create new patient&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#edit_patient"&gt;&lt;li&gt;Edit Patient&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#delete_patient"&gt;&lt;li&gt;Remove (disable) patient&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#medical_history"&gt;&lt;li&gt;Register Medical History&lt;/li&gt;&lt;/a&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h4&gt;&lt;span class="label label-default"&gt;&lt;a href	= "#consultations"&gt;Consultations Module&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;br/&gt;
+
+&lt;ol&gt;
+&lt;a href	= "#register_consultation"&gt;&lt;li&gt;Register Medical Consultation&lt;/li&gt;&lt;/a&gt;
+&lt;a href = "#view_consultation"&gt;&lt;li&gt;View medical consultations&lt;/li&gt;&lt;/a&gt;
+&lt;a href	= "#view_sigec_consultations"&gt;&lt;li&gt;View SIGEC consultations&lt;/li&gt;&lt;/a&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h4&gt;&lt;span class="label label-default"&gt;&lt;a href	 = "#reporting"&gt;Reporting Module&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;br/&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Patients&lt;/li&gt;
+&lt;li&gt;Studies&lt;/li&gt;
+&lt;li&gt;Medicaments&lt;/li&gt;
+&lt;li&gt;Payments&lt;/li&gt;
+&lt;li&gt;Appointments&lt;/li&gt;
+&lt;li&gt;Analysis&lt;/li&gt;
+&lt;li&gt;Procedures&lt;/li&gt;
+&lt;li&gt;Insurers&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+
+&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;&lt;center&gt;SIGEC User Manual - Version 1.1&lt;/center&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+  
+
+
+&lt;h3&gt;&lt;span class="label label-default"&gt;&lt;a name = "about_manual"&gt;About the Manual&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+
+
+&lt;ol&gt;
+&lt;h5&gt;&lt;li&gt;&lt;a name = "purpose"&gt;Purpose&lt;/h5&gt;&lt;/a&gt; 
+&lt;p&gt;
+The main objective of this manual is to establish a guide for SIGEC users to obtain help information related to each aspect of the system. 
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "function"&gt;Document Function&lt;/h5&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;
+The user manual explains the functions, features and capabilities of SIGEC (Sistema de Gestión de Consultorios in Spanish) . This manual is structured in order to explain the functional aspects of the system and detailed instructions to use the system as it was designed.
+&lt;/p&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "definitions"&gt;Definitions, Acronyms and Abbreviations&lt;/h5&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;SIGEC: &lt;/b&gt;Sistema de Gestión de Consultorios (Medical Office Management System, in english).&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;ARS: &lt;/b&gt;Aseguradoras de Riesgos de Salud (Health Risk Insurers, in english).&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;MVC4: &lt;/b&gt;Model -View-Controller Version 4. It is an architectural design principle that separates the components of a web application. This separation provides more control over the individual parts of the application, which facilitates the development, modification and testing.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;GB: &lt;/b&gt;Gigabyte.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;DDR2: &lt;/b&gt;Double Data Rate type 2 RAM Memory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h3&gt;&lt;span class="label label-default"&gt;&lt;a name = "introduction"&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+
+&lt;p&gt;
+SIGEC is a bilingual system of administration of patient consultations in a Web environment . It allows the creation , modification and deletion of patient records from your first visit , creating a record of the patient's history that is updated with each visit , allowing to have stored a complete medical history . SIGEC also allows you to assign medical treatments to patients and printing prescriptions, analysis, studies and procedures to be performed. SIGEC may be used by one or more users simultaneously and thus assign different roles or permissions to those users and is able to access from different locations. Another functionality is SIGEC register consultations payments to insured and uninsured patients.
+&lt;ul&gt;
+&lt;li&gt;Patients Report.&lt;/li&gt;
+&lt;li&gt;Medical History Report.&lt;/li&gt;
+&lt;li&gt;Medicaments Report.&lt;/li&gt;
+&lt;li&gt;Appointments Report.&lt;/li&gt;
+&lt;li&gt;Studies Report.&lt;/li&gt;
+&lt;li&gt;Analysis Report.&lt;/li&gt;
+&lt;li&gt;Procedures Report.&lt;/li&gt;
+&lt;li&gt;Daily Cash Balance&lt;/li&gt;
+&lt;li&gt;Insurers Report.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;General Purpose&lt;/b&gt;&lt;/a&gt;
+Manage information, treatments, appointments, prescriptions, studies, analysis and procedures and payments of patients consulted by Dr. Fredy Figueroa.
+&lt;/p&gt;
+
+&lt;br/&gt;
+
+&lt;h3&gt;&lt;span class="label label-default"&gt;&lt;a name = "user_interface"&gt;User Interface&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "start_sigec"&gt;Start SIGEC&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To start the system only has to double click on the desktop "SIGEC" icon. This will open a browser window where you will be asked for credentials to log.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "logon_window"&gt;Logon Window&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt; 
+The Login window allows the user to access SIGEC with established privileges when creating user (see Users section).
+In the next window, type your Username and Password supplied by administrator and click the "Login" button.
+If you have forgotten your password please see the "Lost Password".
+&lt;/p&gt;&lt;/li&gt;
+ 
+&lt;h5&gt;&lt;li&gt;&lt;a name = "home_window"&gt;Home Window&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Once logged into the SIGEC system the Home Window will be presented. In this window you will see the System Menu depending on your system level access (roles) and information about Appointments of the day  and other important matters.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "about_us_window"&gt;About Us Window&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+In this window, is shown the general information from Dr. Fredy Figueroa medical office, like its history, mission, vision and values and other related informations.
+&lt;/p&gt;&lt;/li&gt;
+
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "contact_window"&gt;Contact Window&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+In the Contact Windows you will see the medical office contact information like phone numbers, email address, physical address and a map of the exact location of the health center.
+&lt;/P&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "help_window"&gt;Help Window&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+In the Help window will find the necessary information from the descriptions of the system menus, options, creation, modification and deletion of entities and generally all aspects of SIGEC.
+&lt;/P&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "actions_menu"&gt;Actions Menu&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Actions Menu you will find the options for the user who is logged on. Some of these options are password change and log off option.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "language_menu"&gt;Language Menu&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+In this menu are the languages in which SIGEC is available. By default SIGEC is shown in Spanish language. To change language select language Selection Menu language and then the " English " option. To return to the Spanish language selected in the Language menu of the " Spanish " option.
+&lt;/p&gt;&lt;/li&gt;
+ 
+&lt;h5&gt;&lt;li&gt;&lt;a name = "manage_menu"&gt;Manage Menu&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+In this menu, System Administration options and their maintenance are located. Among the options in this menu are:
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;ol type=a&gt;
+&lt;h5&gt;&lt;li&gt;&lt;a name = "analysis"&gt;Analysis&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+These are the analytical tests should be recorded in the system to later be given to patients. To register a new analysis just choose the "Analysis" option from our Manage Menu and then click the "New" button and you will be shown a window through which you can fill out a form with information on the new analysis .
+To view analysis details: Select the "View Details" button at the right of the desired analysis.
+To edit an analysis: Select the "Edit" button to the right of the desired analysis and when finish editing click the "Save" button.
+To delete an analysis: Select the "Delete" button to the right of the desired analysis and confirm the deletion.
+&lt;/p&gt;&lt;/li&gt;
+
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "studies"&gt;Studies&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Studies are tests and clinical tests indicated to patients to determine their status and health. To indicate a study to a patient must first be registered in the system, then it may be used. To register a new study just choose the "Studies" option to our Manage Menu and then click the "New" button and you will be shown a window through which you can fill out a form with information on the new study. At the end you need to click on the "Save" button and thus leave the study information stored.
+To view study details: Select the "View Details" to the right of the desired study.
+To edit a study: Select the "Edit" button to the right of the desired study and finish editing click the "Save" button.
+To delete a study: Select the "Delete" button to the right of the desired study and confirm the deletion.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "procedures"&gt;Procedures&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Procedures are a set of interventions or processes performed, or commanded to perform for the doctor to care for patients and heal their health problems. To indicate a procedure to a patient, it must first be registered in the system, then it may be used . To register a new procedure just choose the "Procedures" option to our Manage Menu and then click the "New" button and you will be shown a window through which you can fill out a form with information on the new procedure. At the end you need to click on the "Save" button and thus leave the stored procedure information.
+To view procedure details: Select the "View Details " to the right of the desired procedure.
+To edit a procedure: Select the "Edit" button to the right of the desired procedure and finish editing click the "Save" button.
+To remove a procedure: Select the "Delete" button to the right of the desired procedure and confirm the deletion.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "employees"&gt;Employees&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+SIGEC allows you to manage your medical office employees storing basic information about them. To add a new employee just choose the "Employees" option from our Manage Menu and then click the "New" button and you will be shown a window through which you can fill out the form with information from the employee and at the end only need to click the "Save" to save the information.
+To view the employee details: Select the "View Details " to the right of the desired employee .
+To edit an employee: Select the "Edit" button to the right of the desired employee to finish editing and click the "Save" button.
+To delete an employee: Select the "Delete" button to the right of the desired employee and confirm deletion.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "patients2"&gt;Patients&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+View &lt;a href = "#patients"&gt;Patients Module&lt;/a&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "medicaments"&gt;Medicaments&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Medicines are drugs that can be prescribed to patients after detecting a health condition in a patient to prevent, alleviate or ameliorate diseases. To prescribe a medicament to a patient, it must first be registered in the system, then it may be used. To register a new medicament just choose the "Medicaments" option to our Manage Menu and then click the "New" button and you will be shown a window through which you can fill out a form with information about the new medicament. At the end, you need to click on the "Save" button and thus the medicament information will be keep stored.
+To see medicament details: Select the "View Details " to the right of the desired medicament.
+To edit a medicament: Select the "Edit" button to the right of the desired medicament and finish editing click the "Save" button.
+To remove a medicament: Select the "Delete" button to the right of the medicament and confirm the deletion.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "insurers"&gt;Insurers&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+This option are the different insurance companies, which will be registered in the Medical Office. To register a new insurance just choose the "Insurers" option from our Manage Menu and then click the "New" button and you will be shown a window through which you can fill out a form with the new insurer information.
+To view insurer details: Select the "View Details " to the right of the name of the desired insurance company.
+To edit an insurer: Select the "Edit" button to the right of the name of the insurance company and the desired finish editing click the "Save" button.
+To remove an insurer: Select the "Delete" button to the right of the name of the desired insurance company.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "appointments"&gt;Appointments&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Among the many options in SIGEC we have the Appointments option, in order to keep a better control of consultations. To register a new appointment simply choose the "Appointments" option from our Manage Menu and then click the "New" button and you will be shown a window through which you can search for patient name, assign the doctor, and then select the date and time of the appointment.
+To view appointment details: Select the "View Details " to the right of the desired appointment .
+To edit an appointment: Select the "Edit" button to the right of the desired appointment and finish editing click the "Save" button.
+To delete an appointment: Select the "Delete" button to the right of the desired appointment.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "authorizations"&gt;Authorizations&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Here goes text.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "consultations2"&gt;Consultations&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+View &lt;a href	= "#consultations"&gt;Módulo de Consultas&lt;/a&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "doctors"&gt;Doctors&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+Through the "Doctors" option you can add, view, modify, delete, and set the permissions to roles of doctors that will work with SIGEC. To register a new doctor choose the "Doctors" option in the Manage Menu and then click the "New" button and will be shown a window with a form with the information to register for the new doctor. By completing the form you must click the "Save" button to keep stored the new doctor information.
+To view doctor details: Select the "View Details " to the right of the name of the desired doctor.
+To edit a doctor: Select the "Edit" button to the right of the name of the doctor and the desired finish editing click the "Save" button.
+To delete a Doctor: Select the "Delete" button to the right of the name of the desired doctor.
+To set the rules of doctor consultations: Select the "Rules" button to the right of the name of the desired doctor. Then you will be presented with a form to establish different rules and consultations prices, the daily patients number, start and end time of consultations and consultation days.
+&lt;/p&gt;&lt;/li&gt;
+ &lt;/ol&gt;
+ 
+&lt;h5&gt;&lt;li&gt;&lt;a name = "payments_menu"&gt;Payments Menu&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+&lt;ul&gt;
+Through this window you can realize payments of consultations and print the Daily Cash Balance and printing medical office incomes according to the desired date.
+To register a consultation payment select the "Consultation" option from Payments Menu and the following window with the payment options will be displayed.
+&lt;li&gt;In the Patient option, type the name of the patient you want to register the payment or select the search icon to search for a patient.&lt;/li&gt;
+&lt;li&gt;In the Doctor option, choose the name of Doctor who performed the patient consultation.&lt;/li&gt;
+&lt;li&gt;In the Insurance option select the Patient’s Insurances Company.&lt;/li&gt;
+&lt;li&gt;In the Price option type the consultation cost.&lt;/li&gt;
+&lt;li&gt;In the Discount option insert the amount of the discount , if applicable.&lt;/li&gt;
+&lt;li&gt;In the option Insurance Coverage, type the coverage amount approved by the Insurers Company.&lt;/li&gt;
+&lt;li&gt;In Patient Contribution option type the amount the patient must pay in cash.&lt;/li&gt;
+&lt;li&gt;Click on the "Save" button to save the payment or click the "Cancel" button to abort the current payment.&lt;/li&gt;
+ 
+&lt;/ul&gt;
+&lt;/p&gt; &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h3&gt;&lt;span class="label label-default"&gt;&lt;a name = "patients"&gt;Patients Module&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;
+Through Patients Module, you will be able to create, view, edit and delete patients as well as to complete details of medical history and all basic information.
+&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;h5&gt;&lt;li&gt;&lt;a name = "view_patients"&gt;View System patients&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To view patients registered in the system, click on the Manage Menu, then click the "Patients" tab and then you will see a list of patients that have been stored in the system.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "find_patient"&gt;Buscar paciente&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To find a patient in the system, after accessing the Manage menu, click the "Patients" option and just type the patient's name in the "Search" box and click the search button.
+&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "create_patients"&gt;Crear nuevo paciente&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To create a new patient to the system you must access the Manage Menu and click on the "Patients" option. In the new window click on the "New" button and then you will see a form to add the Patient Data. Once the form is complete, you must click on "Save" button and the patient will be stored in SIGEC .
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "edit_patient"&gt;Editar paciente&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To change any information of a patient must first access the "Patients" option from Manage Menu and then click the "Editar paciente" button located to the right of the desired patient and a new window will be displayed with the information you are able to edit.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "delete_patient"&gt;Eliminar (deshabilitar) paciente&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To delete (disable in this case) a patient click on the "Patients" option of the Manage Menu and then click the button "Delete patient" located to the right of the desired patient and after you confirm the patient deletion no longer will be shown in the list of patients.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "medical_history"&gt;Register Medical History&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To complete the medical history of a patient, having clicking the "Patients" option of the Manage menu, the next step is to click on the icon "Register Medical History" located to the right of the patient and a new window will be shown where you could add the patient's medical history.
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h3&gt;&lt;span class="label label-default"&gt;&lt;a name = "consultations"&gt;Módulo de Consultas&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;
+This module provides the SIGEC user interface to add, view , edit and delete consultations to patients of the medical office.
+&lt;/p&gt;
+
+&lt;ol&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "register_consultation"&gt;Registrar consulta&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To register a new consultation to a SIGEC patient you must access the Manage Menu and click on the "Consultations" option. After this, you will be taken to a window where you can write and store the medical consultation.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "view_consultation"&gt;Ver datos de consulta&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To display data from a previous consultations of a patient go to the "Consultations" option from Manage Menu and then search the patient by name in the "Search" box, when you have found the desired patient click on the button "View Consultation" on the right of the patient record.
+&lt;/p&gt;&lt;/li&gt;
+
+&lt;h5&gt;&lt;li&gt;&lt;a name = "view_sigec_consultations"&gt;Ver consultas del sistema&lt;/h5&gt;&lt;/a&gt;
+&lt;p&gt;
+To view all registered SIGEC patients click the "Consultations" option from Manage Menu and immediately the consultations of all patients will be shown organized by consultations date. To view the details of your consultations, you must click on the "View Consultations" button to the right of the desired consultation.
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;br/&gt;
+
+&lt;h3&gt;&lt;span class="label label-default"&gt;&lt;a name = "reporting"&gt;Reporting Menu&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;
+In this window are the options to generate reports for printing. The available reports are:
+&lt;ul&gt;
+&lt;li&gt;Patients&lt;/li&gt;
+&lt;li&gt;Studies&lt;/li&gt;
+&lt;li&gt;Medicaments&lt;/li&gt;
+&lt;li&gt;Payments&lt;/li&gt;
+&lt;li&gt;Appointments&lt;/li&gt;
+&lt;li&gt;Analysis&lt;/li&gt;
+&lt;li&gt;Procedures&lt;/li&gt;
+&lt;li&gt;Insurers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;&lt;/li&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Help_Msg" xml:space="preserve">
+    <value>Welcome to User Help Section</value>
+  </data>
+  <data name="Help_Title" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Cash" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="DebitCard" xml:space="preserve">
+    <value>Debit card</value>
+  </data>
+  <data name="Exoneration" xml:space="preserve">
+    <value>Exoneration</value>
+  </data>
+  <data name="lblFailedAttemptsCount" xml:space="preserve">
+    <value>{0} of {1} failed attempts.</value>
+  </data>
+  <data name="lblGeneralSerchOn" xml:space="preserve">
+    <value>General Search</value>
+  </data>
+  <data name="lblMaxLoginsAttemptsErr" xml:space="preserve">
+    <value>You have exceeded the maximum number of attempts allowed. Try again in 45 minutes.</value>
+  </data>
+  <data name="Help_Content_Title" xml:space="preserve">
+    <value>&lt;span class="label label-primary"&gt;Table of Contents&lt;/span&gt;</value>
+  </data>
+  <data name="lblPasswordPolicyErr" xml:space="preserve">
+    <value>The password doesn't meet the password policies established.</value>
+  </data>
+  <data name="lblPassworPolicy_Description" xml:space="preserve">
+    <value>The password must be between 6 and 32 characters long.</value>
+  </data>
+  <data name="lblPassworPolicy_Title" xml:space="preserve">
+    <value>Password policies</value>
+  </data>
+  <data name="Consultations_Details" xml:space="preserve">
+    <value>View Consultation data</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="AnalysisController" xml:space="preserve">
+    <value>Analysis</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="AppointmentsController" xml:space="preserve">
+    <value>Appointments</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="AuthorizationsController" xml:space="preserve">
+    <value>Authorizations</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="ConsultationsController" xml:space="preserve">
+    <value>Consultations</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Doctor" xml:space="preserve">
+    <value>Doctor</value>
+  </data>
+  <data name="DoctorsController" xml:space="preserve">
+    <value>Doctors</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="EmployeesController" xml:space="preserve">
+    <value>Employees</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Main Page</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="InsurersController" xml:space="preserve">
+    <value>Insurers</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="lblHomeTime" xml:space="preserve">
+    <value>Today is {0}</value>
+  </data>
+  <data name="lblPermissionsHelpPopup_Description" xml:space="preserve">
+    <value>You can only edit the permissions of the currently selected role, so that if you change the role unsaved data will be lost.</value>
+  </data>
+  <data name="lblPermissionsHelpPopup_Title" xml:space="preserve">
+    <value>Edit Role permissions</value>
+  </data>
+  <data name="MedicalHistory" xml:space="preserve">
+    <value>Medical History</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="MedicamentsController" xml:space="preserve">
+    <value>Medicaments</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Patient" xml:space="preserve">
+    <value>Patient</value>
+  </data>
+  <data name="PatientsController" xml:space="preserve">
+    <value>Patients</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="PayConsultation" xml:space="preserve">
+    <value>Pay Consultation</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="PaymentsController" xml:space="preserve">
+    <value>Payments</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="ProceduresController" xml:space="preserve">
+    <value>Procedures</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Consultation Rules</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="ScheduleAppointment" xml:space="preserve">
+    <value>Schedule Appointment (Patients)</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="ScheduleDetails" xml:space="preserve">
+    <value>Details (Patients)</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="StudiesController" xml:space="preserve">
+    <value>Studies</value>
+    <comment>permissions labels for localizations</comment>
+  </data>
+  <data name="lbladdress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblcel" xml:space="preserve">
+    <value>Cellphone</value>
+  </data>
+  <data name="lblmap" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="lbloffice" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="Contact_Msg" xml:space="preserve">
+    <value>This page provides you with different ways to contact us.</value>
+  </data>
+  <data name="Contact_Title" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Map_Msg" xml:space="preserve">
+    <value>View Larger Map</value>
+  </data>
+  <data name="Office_address" xml:space="preserve">
+    <value>27 de Febrero avenue corner with Federico Henríquez y Carvajal st, 5ft floor of Centro Médico Otorrino building,&lt;br /&gt;
+Don Bosco, Santo Domingo, Dominican Republic.</value>
+  </data>
+  <data name="Slider_picture_text1" xml:space="preserve">
+    <value>Dr. Fredy Figueroa Medical Office</value>
+  </data>
+  <data name="Slider_picture_text2" xml:space="preserve">
+    <value>Over 20 years of experience in ​​health area</value>
+  </data>
+  <data name="Slider_picture_text3" xml:space="preserve">
+    <value>Specialist in Internal Medicine, Nutrology and Cardiology</value>
+  </data>
+  <data name="Slider_picture_text4" xml:space="preserve">
+    <value>We care about your health, like ours</value>
+  </data>
+  <data name="Slider_picture_text5" xml:space="preserve">
+    <value>We are located on the 5th floor of Centro Médico Otorrino</value>
+  </data>
+  <data name="About_text" xml:space="preserve">
+    <value>&lt;br/&gt;
+
+&lt;div class="panel panel-primary"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;&lt;center&gt;History&lt;/center&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+
+&lt;p&gt;
+Dr. Fredy Figueroa Antonio Guilamo was graduated Doctor of Medicine at the Autonomous University of Santo Domingo in 1987.
+&lt;/p&gt;
+&lt;p&gt;
+For the years 1990 to 1993 he studies the specialty of Internal Medicine at the Medical Clinic of the Italian Hospital of Buenos Aires, Argentina . Place where simultaneously performed the Biannual Course Critical Medicine, supported by the Medical Association of Argentina. From May 1991 to March 1993, he was part of the permanent rotation of the Intensive Care Unit of the Italian Hospital of Buenos Aires.
+&lt;/p&gt;
+&lt;p&gt;
+By the year 1993, he was working as Head of Intensive Care of the Alcántara González Clinic and Head of Intensive Care and Coordinator of Internal Medicine teaching at the Instituto de Diabetes y Endocrinología (INDEN), where he worked until 1996.
+&lt;/p&gt;
+&lt;p&gt;
+From 1994 to 1996, he worked as attached doctor for service of the Dermatologic Surgery at the Instituto Dermatológico Dominicano.
+&lt;/p&gt;
+&lt;p&gt;
+In 1995, he began his work at the Centro de Otorrinolaringología y Especialidades (Today, Centro Médico Otorrino) as Head of Intensive Care, a position he held until 2002. In addition, in 1995, he began his job as internal medicine doctor of external consultations, where he continues working today and this is the chosen medical office to manage patients through SIGEC.
+&lt;/p&gt;
+&lt;p&gt;
+He also works as internal medicine doctor of external consultations at Corazones Unidos Clinic since 2005 to date.
+&lt;/p&gt;
+&lt;p&gt;
+Another function is Medical Advisor for FELTREX Dominican Laboratories from 2000 to present.
+&lt;/p&gt;
+&lt;p&gt;
+Dr. Fredy Figueroa is also a founding member of the Dominican Society of Critical and Intensive Care Medicine.
+&lt;/p&gt;
+
+&lt;p&gt;
+With its long journey and vast experience, Dr. Fredy Figueroa is one of the doctors with more patients consulted in the health centers where he works.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;&lt;center&gt;Mission&lt;/center&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+&lt;p&gt;
+Provide exemplary health care for my patients in order to reflect in a better quality of life.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="panel panel-primary"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;&lt;center&gt;Vision&lt;/center&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+&lt;p&gt;
+Being one of the best-prepared and most recognized doctors in the country in the area of internal medicine and nutriology, to bring high quality health to my patients.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading"&gt;
+    &lt;h3 class="panel-title"&gt;&lt;center&gt;Values&lt;/center&gt;&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Responsibility&lt;/li&gt;
+&lt;li&gt;Discretion&lt;/li&gt;
+&lt;li&gt;Medical Ethics&lt;/li&gt;
+&lt;li&gt;Interest&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Doctor_picture_text" xml:space="preserve">
+    <value>&lt;p&gt; &lt;center&gt; Internist &lt;br/&gt;Nutritionist &lt;br/&gt; Cardiologist &lt;/ center&gt; &lt;/ p&gt;</value>
+  </data>
+  <data name="lblPrint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+</root>

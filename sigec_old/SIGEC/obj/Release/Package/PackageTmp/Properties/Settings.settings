@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIGEC.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SMTP_FromName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SIGEC</Value>
+    </Setting>
+    <Setting Name="SMTP_Mail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">carlos02inf@gmail.com</Value>
+    </Setting>
+    <Setting Name="SMTP_Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">020890020890</Value>
+    </Setting>
+    <Setting Name="SMTP_Port" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+    <Setting Name="SMTP_Host" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="MaxLoginAttempts" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

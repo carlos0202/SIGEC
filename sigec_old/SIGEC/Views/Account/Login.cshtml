@@ -1,0 +1,57 @@
+﻿@model SIGEC.Models.LoginModel
+
+@{
+    ViewBag.Title = _("lblLogin");
+}
+<div class="col-lg-6 col-lg-offset-3">
+    <hgroup class="title">
+        <h1><img alt="doctor_picture" src="~/Images/login.png" />@ViewBag.Title.</h1>
+    </hgroup>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="well">
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+                { 
+                    <div class="alert alert-dismissable alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        @Html.ValidationSummary(true)
+                    </div>
+                }
+                
+                <fieldset>
+                    <legend>@_("Login_Title")</legend>
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            @Html.CLabelFor(m => m.UserName)
+                            @Html.CTextBoxFor(m => m.UserName)
+                            @Html.CValidationMessageFor(m => m.UserName)
+                        </div>
+                        <div class="form-group col-lg-12">
+                            @Html.CLabelFor(m => m.Password)
+                            @Html.CPasswordFor(m => m.Password)
+                            @Html.CValidationMessageFor(m => m.Password)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label class="mb20">@Html.CheckBox("RememberMe") @_("lblRememberMe")</label>
+                        </div>
+                        <div class="form-group col-lg-16">
+                        </div>
+                    </div>
+                    <div class="row form-group col-lg-12">
+                        <input type="submit" value="@Language.lblLogin" class="btn btn-primary" />
+                        @Html.ActionLink(_("lblForgotPassword"), "ResetPassword", null, new { @class = "ml10" })
+                    </div>
+                </fieldset>
+                <p>
+                </p>
+            }
+        </div>
+    </div>
+</div>
+
